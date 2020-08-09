@@ -18,7 +18,8 @@
         android:id="@+id/navigationView"
         app:menu="@menu/drawer_menu"
         app:headerLayout="@layout/drawer_header"
-        android:layout_gravity="start" />
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"/>
 
 
 
