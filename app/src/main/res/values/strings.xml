@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">OceanBatApp</string>
+    <string name="home_text">Home</string>
+    <string name="favourite_text">Favourite</string>
+    <string name="profile_text">Profile</string>
+    <string name="history_text">History</string>
 </resources>
