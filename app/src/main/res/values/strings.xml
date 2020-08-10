@@ -5,4 +5,8 @@
     <string name="profile_text">Profile</string>
     <string name="history_text">History</string>
     <string name="nav_header">Menu</string>
+    <string name="login">Login</string>
+    <string name="email">Email :</string>
+    <string name="password">Password :</string>
+    <string name="Login">login</string>
 </resources>
