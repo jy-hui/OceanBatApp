@@ -1,4 +1,12 @@
 package com.example.oceanbatapp;
 
-public class Home {
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class Home extends AppCompatActivity {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.home);
+
+    }
 }
