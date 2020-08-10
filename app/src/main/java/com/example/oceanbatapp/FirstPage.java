@@ -33,7 +33,8 @@ public class FirstPage extends AppCompatActivity implements View.OnClickListener
                 break;
             }
             case R.id.button_signUp: {
-                Toast.makeText(this, "Button Sign Up clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(FirstPage.this,Home.class);
+                startActivity(intent);
                 break;
             }
     }
