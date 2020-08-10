@@ -7,16 +7,16 @@
     <string name="nav_header">Menu</string>
     <string name="open_text">open</string>
     <string name="close_text">close</string>
-    <string name="login">Login</string>
+    <string name="login">LOGIN</string>
     <string name="email">Email :</string>
     <string name="password">Password :</string>
     <string name="Login">login</string>
-    <string name="title_home">Home</string>
+    <string name="signUp">SIGN UP</string>
+    <string name="text_home">HOME</string>
     <string name="button_detail">DETAIL</string>
     <string name="button_book">BOOK</string>
-    <string name="title_car">CAR</string>
-    <string name="title_motorcycle">MOTORCYCLE</string>
-    <string name="title_house">HOUSE</string>
-    <string name="title_garden">GARDEN</string>
-    <string name="title_cleaning_section">CLEANING SECTION</string>
+    <string name="text_car">CAR</string>
+    <string name="text_motorcycle">MOTORCYCLE</string>
+    <string name="text_house">HOUSE</string>
+    <string name="text_garden">GARDEN</string>
 </resources>
