@@ -20,52 +20,60 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CAR"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="168dp" />
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DETAILS"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="201dp" />
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="238dp"
         android:layout_height="199dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/cleaning_car"
-        tools:layout_editor_absoluteY="220dp" />
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/cleaning_car" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="438dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="447dp" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="588dp" />
+        tools:layout_editor_absoluteY="577dp" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="588dp" />
+        tools:layout_editor_absoluteY="577dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
