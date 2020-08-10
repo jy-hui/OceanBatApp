@@ -11,4 +11,12 @@
     <string name="email">Email :</string>
     <string name="password">Password :</string>
     <string name="Login">login</string>
+    <string name="title_home">Home</string>
+    <string name="button_detail">DETAIL</string>
+    <string name="button_book">BOOK</string>
+    <string name="title_car">CAR</string>
+    <string name="title_motorcycle">MOTORCYCLE</string>
+    <string name="title_house">HOUSE</string>
+    <string name="title_garden">GARDEN</string>
+    <string name="title_cleaning_section">CLEANING SECTION</string>
 </resources>
