@@ -19,4 +19,17 @@
     <string name="text_motorcycle">MOTORCYCLE</string>
     <string name="text_house">HOUSE</string>
     <string name="text_garden">GARDEN</string>
+    <string name="text_details">DETAILS</string>
+    <string name="detail_car">Make a booking for us, we will wait you at our
+    shop prepared to wash your car to the cleanest.
+    \n\n  Operating Hour: 9am to 11am,
+    \n 1pm to 6pm
+    \n\n Price: Basic Cleaning 10 to 20 according to car size
+    \n\n Full Cleaning including waxing : \n Below RM100</string>
+    <string name="detail_motorcycle">*********
+        \n\n **************</string>
+    <string name="detail_house">*********
+        \n\n **************</string>
+    <string name="detail_garden">*********
+        \n\n **************</string>
 </resources>
