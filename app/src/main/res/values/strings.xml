@@ -5,4 +5,6 @@
     <string name="profile_text">Profile</string>
     <string name="history_text">History</string>
     <string name="nav_header">Menu</string>
+    <string name="open_text">open</string>
+    <string name="close_text">close</string>
 </resources>
