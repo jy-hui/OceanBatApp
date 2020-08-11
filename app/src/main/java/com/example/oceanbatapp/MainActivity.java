@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.wifi.hotspot2.pps.HomeSp;
 import android.os.Bundle;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.textfield.TextInputLayout;
+
 import android.text.style.TtsSpan;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,10 +22,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-     EditText email,password;
-     Button button;
-     String Email,pass;
-     String emailpatern= "[a-zA-Z0-9._-]+@[a-z]+\\+[a-z]+";
+    private TextInputLayout textInputEmail;
+    private TextInputLayout textInputPassword;
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,37 +39,41 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        drawerLayout = findViewById(R.id.drawer);
-        navigationView = findViewById(R.id.navigationView);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open_text,R.string.close_text);
+        textInputEmail = findViewById(R.id.text_input_email);
+        textInputPassword = findViewById(R.id.text_input_password);
+    }
+    private boolean validateEmail(){
+        String emailInput;
+        emailInput =(textInputEmail.getEditText()).getText().toString().trim();
 
-        email = findViewById(R.id.editTextTextEmailAddress);
-        password = findViewById(R.id.editTextTextPassword);
+        if (emailInput.isEmpty()){
+            textInputEmail.setError("Field can't be empty");
+            return false;
+        }else{
+            textInputEmail.setError(null);
+            return true;
+        }
+    }
 
-        button.setOnClickListener(new View.OnClickListener(){
+    private boolean validatePassword(){
+        String PasswordInput = textInputPassword.getEditText().getText().toString().trim();
 
-            @Override
-            public void onClick(View view) {
-
-                Email = email.getText().toString();
-                pass = password.getText().toString();
-
-                if(Email.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Please Enter Email", Toast.LENGTH_SHORT).show();
-                }else if(Email.matches(emailpatern)){
-                    Toast.makeText(MainActivity.this, "Enter valid email    ", Toast.LENGTH_SHORT).show();
-                }else if(pass.isEmpty()){
-                    Toast.makeText(MainActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
-                }else if(pass.length()<8){
-                    Toast.makeText(MainActivity.this, "Please Enter 8 Digit Password", Toast.LENGTH_SHORT).show();
-                }
-                Intent intent = new Intent(MainActivity.this,Home.class );
-                startActivity(intent);
-            }
-        });
-
+        if (PasswordInput.isEmpty()){
+            textInputPassword.setError("Field can't be empty");
+            return false;
+        }else{
+            textInputPassword.setError(null);
+            return true;
+        }
+    }
+    public void confirmInput(View v) {
+        if(!validateEmail()|!validatePassword()){
+            return;
+        }
+        String input = "Email :" + textInputEmail.getEditText().getText().toString() + "\n";
+        input += "Password" +textInputPassword.getEditText().getText().toString();
+        input +="\n";
+        Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
     }
 
 }
