@@ -17,7 +17,7 @@ public class BookingPage extends AppCompatActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.booking);
 
-        Spinner spinner = findViewById(R.id.spinner1);
+        Spinner spinner = findViewById(R.id.time_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.numbers, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
