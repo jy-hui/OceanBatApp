@@ -36,44 +36,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-        textInputEmail = findViewById(R.id.text_input_email);
-        textInputPassword = findViewById(R.id.text_input_password);
     }
-    private boolean validateEmail(){
-        String emailInput;
-        emailInput =(textInputEmail.getEditText()).getText().toString().trim();
-
-        if (emailInput.isEmpty()){
-            textInputEmail.setError("Field can't be empty");
-            return false;
-        }else{
-            textInputEmail.setError(null);
-            return true;
-        }
-    }
-
-    private boolean validatePassword(){
-        String PasswordInput = textInputPassword.getEditText().getText().toString().trim();
-
-        if (PasswordInput.isEmpty()){
-            textInputPassword.setError("Field can't be empty");
-            return false;
-        }else{
-            textInputPassword.setError(null);
-            return true;
-        }
-    }
-    public void confirmInput(View v) {
-        if(!validateEmail()|!validatePassword()){
-            return;
-        }
-        String input = "Email :" + textInputEmail.getEditText().getText().toString() + "\n";
-        input += "Password" +textInputPassword.getEditText().getText().toString();
-        input +="\n";
-        Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
-    }
-
 }
