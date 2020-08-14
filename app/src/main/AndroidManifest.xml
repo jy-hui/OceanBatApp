@@ -11,15 +11,16 @@
         android:theme="@style/AppTheme">
         <activity android:name=".FirstPage">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-        <activity android:name=".MainActivity">
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".ActivityLogin">
-        </activity>
+        <activity android:name=".ActivityLogin" />
         <activity android:name=".Home" />
+        <activity android:name=".BookingPage" />
+        <activity android:name=".Profile"></activity>
+
     </application>
 
 </manifest>
