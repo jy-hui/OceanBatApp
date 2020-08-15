@@ -19,8 +19,8 @@ public class ActivityLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        textInputEmail = findViewById(R.id.text_input_email);
-        textInputPassword = findViewById(R.id.text_input_password);
+        //textInputEmail = findViewById(R.id.text_input_email);
+        //textInputPassword = findViewById(R.id.text_input_password);
     }
 
     private boolean validateEmail(){
