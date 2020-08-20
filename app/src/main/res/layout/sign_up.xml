@@ -8,6 +8,7 @@
     tools:context=".ActivityLogin">
 
     <TextView
+        android:id="@+id/textView16"
         android:layout_width="118dp"
         android:layout_height="80dp"
         android:gravity="center"
@@ -22,11 +23,15 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="47dp"
-        android:layout_height="29dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/email"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="381dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.528" />
 
     <TextView
         android:id="@+id/name_text"
@@ -50,7 +55,7 @@
         app:errorEnabled="true"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.314"
+        app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:passwordToggleEnabled="true" />
 
@@ -64,8 +69,10 @@
         android:text="@string/register_name"
         app:errorEnabled="true"
         app:layout_constraintBaseline_toBaselineOf="@+id/name_text"
-        app:passwordToggleEnabled="true"
-        tools:layout_editor_absoluteX="113dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toEndOf="@+id/name_text"
+        app:passwordToggleEnabled="true" />
 
     <TextView
         android:id="@+id/textView3"
