@@ -33,7 +33,7 @@ public class FirstPage extends AppCompatActivity implements View.OnClickListener
                 break;
             }
             case R.id.button_signUp: {
-                Intent intent = new Intent(FirstPage.this,Home.class);
+                Intent intent = new Intent(FirstPage.this,SignUp.class);
                 startActivity(intent);
                 break;
             }
