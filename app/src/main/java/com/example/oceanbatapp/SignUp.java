@@ -15,7 +15,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.sign_up);
 
         final Button Login = findViewById(R.id.signUp_button);
         Login.setOnClickListener(this);
@@ -29,8 +29,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
         switch (view.getId()) {
             case R.id.signUp_button:{
-                Toast.makeText(this, "Button Login clicked", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignUp.this, Home.class);
+                Toast.makeText(this, "Button sign up clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SignUp.this, FirstPage.class);
                 startActivity(intent);
                 break;
             }
