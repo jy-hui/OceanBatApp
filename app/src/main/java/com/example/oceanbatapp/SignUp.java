@@ -1,29 +1,95 @@
 package com.example.oceanbatapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class SignUp extends AppCompatActivity implements View.OnClickListener {
+/*public class SignUp extends AppCompatActivity implements View.OnClickListener {*/
+public class SignUp extends AppCompatActivity {
+    EditText mFullName, mEmail, mPassword, mPhone;
+    Button mRegisterBtn;
+    TextView mLoginBtn;
+    FirebaseAuth fAuth;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
 
-        final Button Login = findViewById(R.id.signUp_button);
-        Login.setOnClickListener(this);
+        mFullName = findViewById(R.id.text_input_name);
+        mEmail = findViewById(R.id.text_input_email);
+        mPassword = findViewById(R.id.text_input_password);
+        mRegisterBtn = findViewById(R.id.signUp_button);
 
+        fAuth = FirebaseAuth.getInstance();
+
+        if (fAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
+        }
+
+        mRegisterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = mEmail.getText().toString().trim();
+                String password = mPassword.getText().toString().trim();
+
+                if (TextUtils.isEmpty((email))) {
+                    mEmail.setError("Email is Required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(password)) {
+                    mPassword.setError("Password is Required");
+                    return;
+                }
+
+                if (password.length() < 6) {
+                    mPassword.setError("Password Must be >= 6 Character");
+                    return;
+                }
+
+                // register user in firebase
+
+                fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(SignUp.this, "User Created.", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        } else {
+                            Toast.makeText(SignUp.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+            }
+        });
+
+        /*final Button Login = findViewById(R.id.signUp_button);
+        Login.setOnClickListener(this);*/
+    }
 
 }
 
-
+/*
     @Override
     public void onClick(View view) {
 
@@ -37,3 +103,5 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         }
     }
 }
+
+ */
