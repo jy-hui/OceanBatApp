@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 /*public class SignUp extends AppCompatActivity implements View.OnClickListener {*/
 public class SignUp extends AppCompatActivity {
-    EditText mFullName, mEmail, mPassword, mPhone;
+    EditText mFullName, mEmail, mPassword, mPhone,mBirthday,mRepassword;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
@@ -33,6 +33,8 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
 
+        mRepassword = findViewById(R.id.rePassword_text);
+        mBirthday = findViewById(R.id.input_text_date);
         mFullName = findViewById(R.id.text_input_name);
         mEmail = findViewById(R.id.text_input_email);
         mPassword = findViewById(R.id.text_input_password);
@@ -50,13 +52,28 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View view) {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
+                String Username = mFullName.getText().toString().trim();
+                String Birthday = mBirthday.getText().toString().trim();
+                String Repassword = mRepassword.getText().toString().trim();
 
+                if(TextUtils.isEmpty((Username))) {
+                    mFullName.setError("Name is required");
+                    return;
+                }
+                if(TextUtils.isEmpty((Birthday))) {
+                    mBirthday.setError("Birthday is required");
+                    return;
+                }
                 if (TextUtils.isEmpty((email))) {
                     mEmail.setError("Email is Required");
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)) {
+                    mPassword.setError("Password is Required");
+                    return;
+                }
+                if (TextUtils.isEmpty(Repassword)) {
                     mPassword.setError("Password is Required");
                     return;
                 }
