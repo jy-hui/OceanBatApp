@@ -74,6 +74,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView3"
         tools:ignore="OnClick" />
 
+
     <Button
         android:id="@+id/Login_button"
         android:layout_width="305dp"
@@ -82,24 +83,10 @@
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_input_password"
-        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintVertical_bias="0.109"
         tools:ignore="OnClick" />
-
-    <TextView
-        android:id="@+id/createText"
-        android:layout_width="184dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="20dp"
-        android:text="New Here? Create Account"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login_button"
-        app:layout_constraintVertical_bias="0.0" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -110,7 +97,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createText" />
+        app:layout_constraintTop_toBottomOf="@+id/Login_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
