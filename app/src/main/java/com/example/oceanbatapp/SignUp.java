@@ -33,7 +33,7 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
 
-        mRepassword = findViewById(R.id.rePassword_text);
+        mRepassword = findViewById(R.id.text_input_rePassword);
         mBirthday = findViewById(R.id.input_text_date);
         mFullName = findViewById(R.id.text_input_name);
         mEmail = findViewById(R.id.text_input_email);
