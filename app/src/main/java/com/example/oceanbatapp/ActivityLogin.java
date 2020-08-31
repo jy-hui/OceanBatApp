@@ -77,17 +77,3 @@ public class ActivityLogin extends AppCompatActivity  {
         });
     }
 }
-/*@Override
-    public void onClick(View view) {
-//final Button Login = findViewById(R.id.Login_button);
-        //Login.setOnClickListener(this);
-implements View.OnClickListener
-        switch (view.getId()) {
-            case R.id.Login_button: {
-                Toast.makeText(this, "Button Login clicked", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ActivityLogin.this, Home.class);
-                startActivity(intent);
-                break;
-            }
-        }
-    }*/
