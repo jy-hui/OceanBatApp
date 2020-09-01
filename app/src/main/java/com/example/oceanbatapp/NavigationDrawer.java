@@ -9,7 +9,7 @@ import android.os.Bundle;
 
 public class NavigationDrawer extends AppCompatActivity {
 
-    @SuppressLint("WrongViewCast")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
