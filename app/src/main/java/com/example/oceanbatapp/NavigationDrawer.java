@@ -7,7 +7,7 @@ import android.annotation.SuppressLint;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class NavigationDrawer extends AppCompatActivity {
 
     @SuppressLint("WrongViewCast")
     @Override
