@@ -46,5 +46,7 @@
     <string name="rePassword">Re-Password</string>
     <string name="date">DD/MM/YYYY</string>
     <string name="input_name">Enter Your Name</string>
-    <string name="register_name">Enter Your Nmae</string>
+    <string name="register_name">Enter Your Name</string>
+    <string name="settings_text">Settings</string>
+    <string name="log_out_text">Log Out</string>
 </resources>
