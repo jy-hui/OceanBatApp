@@ -17,13 +17,22 @@
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".NavigationDrawer">
         </activity>
         <activity android:name=".ActivityLogin">
         </activity>
         <activity android:name=".SignUp">
         </activity>
         <activity android:name=".Home" />
+
+        <activity android:name=".DetailCar">
+        </activity>
+        <activity android:name=".DetailHouse">
+        </activity>
+        <activity android:name=".DetailGarden">
+        </activity>
+        <activity android:name=".DetailMotorcycle">
+        </activity>
     </application>
 
 </manifest>

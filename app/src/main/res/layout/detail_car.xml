@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".DetailCar">
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image_logo"
         android:layout_width="wrap_content"
         android:layout_height="123dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,7 +20,7 @@
         app:srcCompat="@drawable/logo_ocean_bat" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_car"
@@ -24,10 +28,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/image_logo" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/text_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_details"
@@ -35,20 +39,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/text_service" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/image_service"
         android:layout_width="279dp"
         android:layout_height="189dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/text_detail"
         app:srcCompat="@drawable/cleaning_car" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/text_content"
         android:layout_width="320dp"
         android:layout_height="278dp"
         android:text="@string/detail_car"
@@ -56,10 +60,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/image_service" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
@@ -67,10 +71,10 @@
         android:layout_marginTop="24dp"
         android:text="Back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/text_content" />
 
     <Button
-        android:id="@+id/button_car_detail_book"
+        android:id="@+id/button_service_book"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -78,6 +82,7 @@
         android:layout_marginRight="68dp"
         android:text="@string/button_book"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/text_content" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
