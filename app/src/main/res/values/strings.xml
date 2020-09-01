@@ -49,4 +49,7 @@
     <string name="register_name">Enter Your Name</string>
     <string name="settings_text">Settings</string>
     <string name="log_out_text">Log Out</string>
+
+
+
 </resources>

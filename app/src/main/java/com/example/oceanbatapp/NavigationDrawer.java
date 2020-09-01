@@ -5,6 +5,9 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 
 import android.annotation.SuppressLint;
@@ -41,9 +44,16 @@ public class NavigationDrawer extends AppCompatActivity {
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem){
 
         if(menuItem.getItemId()==R.id.nav_home)
-
+            loadFragment(new com.example.oceanbatapp.Fragment());
 
         return true;
     }
 
+    private void loadFragment(Fragment secondFragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container_fragment,secondFragment);
+        fragmentTransaction.commit();
+    }
+    
 }
