@@ -30,7 +30,6 @@ public class NavigationDrawer extends AppCompatActivity {
         setContentView(R.layout.drawer_main);
 
         toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         drawerLayout= findViewById(R.id.drawer);
         navigationView = findViewById(R.id.navigationView);
 
