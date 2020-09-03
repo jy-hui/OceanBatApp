@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".SignUp">
         </activity>
+        <activity android:name=".BookingPage">
+        </activity>
         <activity android:name=".Home" />
 
         <activity android:name=".DetailCar">
