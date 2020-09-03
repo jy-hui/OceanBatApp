@@ -1,40 +1,42 @@
 package com.example.oceanbatapp;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class BookingPage extends AppCompatActivity{ //implements AdapterView.OnItemSelectedListener{
+import androidx.appcompat.app.AppCompatActivity;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.booking);
+public class BookingPage extends AppCompatActivity implements
+        AdapterView.OnItemSelectedListener {
+        String[] Services = {  "Choose","Car cleaning services", "House cleaning services", "Garden cleaning services", "Motorcycle cleaning services"};
 
-        //Spinner spinner = findViewById(R.id.time_spinner);
-       // ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.numbers, android.R.layout.simple_spinner_item);
-      //  adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-    //    spinner.setAdapter(adapter);
-      //  spinner.setOnItemSelectedListener(this);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.booking);
+                //Getting the instance of Spinner and applying OnItemSelectedListener on it
+                Spinner spin = (Spinner) findViewById(R.id.services_spinner);
+                spin.setOnItemSelectedListener(this);
 
-    }
+                //Creating the ArrayAdapter instance having the country list
+                ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,Services);
+                aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                //Setting the ArrayAdapter data on the Spinner
+                spin.setAdapter(aa);
 
+        }
 
-
-   // @Override
-    //public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
-     //   String text = parent.getItemAtPosition(position).toString();
-      //  Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
-  //  }
-
-  // @Override
-  //  public void onNothingSelected(AdapterView<?> parent) {
-
-   // }
+        //Performing action onItemSelected and onNothing selected
+        @Override
+        public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+                Toast.makeText(getApplicationContext(),Services[position] , Toast.LENGTH_LONG).show();
+        }
+        @Override
+        public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+        }
 }
