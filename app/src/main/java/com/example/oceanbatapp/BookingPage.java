@@ -74,8 +74,8 @@ public  class BookingPage extends AppCompatActivity {
                                         reference = rootNode.getReference("Booking").child(userID);
                                         reference.child("Address").setValue(Address);
                                         reference.child("Book").setValue(Book);
-                                        reference.child("services Date").setValue(ServicesD);
-                                        reference.child("Services Time").setValue(ServicesT);
+                                        reference.child("servicesDate").setValue(ServicesD);
+                                        reference.child("ServicesTime").setValue(ServicesT);
                                         reference.child("Other Information").setValue(Other);
                                 }
                         }

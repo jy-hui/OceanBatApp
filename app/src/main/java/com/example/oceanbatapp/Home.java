@@ -54,9 +54,21 @@ public class Home extends AppCompatActivity implements View.OnClickListener
                     startActivity(intent);
                     break;
                 }
-                case R.id.button_book_car:
-                case R.id.button_book_motor:
-                case R.id.button_book_house:
+                case R.id.button_book_car: {
+                    Intent intent = new Intent(Home.this, BookingPage.class);
+                    startActivity(intent);
+                    break;
+                }
+                case R.id.button_book_motor:{
+                    Intent intent = new Intent(Home.this, BookingPage.class);
+                    startActivity(intent);
+                    break;
+            }
+                case R.id.button_book_house: {
+                    Intent intent = new Intent(Home.this, BookingPage.class);
+            startActivity(intent);
+            break;
+        }
                 case R.id.button_book_garden: {
                     Intent intent = new Intent(Home.this,BookingPage.class);
                     startActivity(intent);
