@@ -28,7 +28,7 @@ public class FirstPage extends AppCompatActivity implements View.OnClickListener
         switch (view.getId()){
             case R.id.button_login: {
                 Toast.makeText(this, "Button Login clicked", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(FirstPage.this,BookingPage.class);
+                Intent intent = new Intent(FirstPage.this,ActivityLogin.class);
                 startActivity(intent);
                 break;
             }
