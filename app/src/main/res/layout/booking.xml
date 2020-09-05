@@ -43,8 +43,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/booking_title" />
 
-    <Spinner
-        android:id="@+id/services_spinner"
+    <TextView
+        android:id="@+id/services_indicator"
         android:layout_width="306dp"
         android:layout_height="31dp"
         android:layout_marginTop="8dp"
@@ -61,7 +61,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/address_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/services_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/services_indicator" />
 
     <EditText
         android:id="@+id/booking_address_field"
@@ -73,7 +73,7 @@
         android:inputType="textPostalAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/booking_title_address"
-        app:layout_constraintTop_toBottomOf="@+id/services_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/services_indicator" />
 
     <TextView
         android:id="@+id/booking_date_text"
