@@ -9,8 +9,16 @@ public class Booking {
     private String Other;
 
     public Booking() {
-    }
 
+    }
+    public Booking(String address, String BookingDate, String servicesDate, String servicesTime, String other) {
+        this.address = address;
+        this.BookingDate = BookingDate;
+        ServicesDate = servicesDate;
+        ServicesTime = servicesTime;
+        Other = other;
+
+    }
     public String getAddress() {
         return address;
     }

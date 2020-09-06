@@ -78,6 +78,7 @@ public  class BookingPage extends AppCompatActivity {
                                         reference.child("ServicesTime").setValue(ServicesT);
                                         reference.child("Other Information").setValue(Other);
                                 }
+                                Booking booking = new Booking(Address, Book, ServicesD, ServicesT, Other);
                         }
                 });
         }
