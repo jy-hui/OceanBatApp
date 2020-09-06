@@ -25,13 +25,13 @@ import java.util.concurrent.atomic.AtomicMarkableReference;
 
 /*public class SignUp extends AppCompatActivity implements View.OnClickListener {*/
 public class SignUp extends AppCompatActivity {
-    EditText mFullName, mEmail, mPassword, mPhone, mBirthday, mRepassword;
+    EditText mFullName, mEmail, mPassword, mPhoneNo, mBirthday, mRepassword;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
-    String userID, email, password, Username, Birthday;
+    String userID, email, password, Username, Birthday, phoneNo;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -45,6 +45,8 @@ public class SignUp extends AppCompatActivity {
         mFullName = findViewById(R.id.text_input_name);
         mEmail = findViewById(R.id.text_input_email);
         mPassword = findViewById(R.id.text_input_password);
+        mPhoneNo = findViewById(R.id.input_text_phone);
+
         mRegisterBtn = findViewById(R.id.signUp_button);
 
         fAuth = FirebaseAuth.getInstance();
@@ -63,6 +65,7 @@ public class SignUp extends AppCompatActivity {
                 password = mPassword.getText().toString().trim();
                 Username = mFullName.getText().toString().trim();
                 Birthday = mBirthday.getText().toString().trim();
+                phoneNo = mPhoneNo.getText().toString().trim();
                 String Repassword = mRepassword.getText().toString().trim();
 
                 if(TextUtils.isEmpty((Username))) {
@@ -84,6 +87,9 @@ public class SignUp extends AppCompatActivity {
                 }else if (password.length() < 6) {
                     mPassword.setError("Password Must be >= 6 Character");
                     return;
+                } else if (TextUtils.isEmpty(phoneNo)) {
+                        mPassword.setError("Phone number is required");
+                        return;
                 }
                 else {
 
@@ -101,6 +107,7 @@ public class SignUp extends AppCompatActivity {
                                 reference.child("password").setValue(password);
                                 reference.child("Username").setValue(Username);
                                 reference.child("Birthday").setValue(Birthday);
+                                reference.child("phoneNo").setValue(phoneNo);
                                 Toast.makeText(SignUp.this, "User Created.", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(), Home.class));
                             } else {
@@ -116,7 +123,7 @@ public class SignUp extends AppCompatActivity {
                 //get all the value
 
 
-                UserHelperClass helperClass = new UserHelperClass(email, password, Username, Birthday);
+                UserHelperClass helperClass = new UserHelperClass(email, password, Username, Birthday, phoneNo);
 
               //  reference.setValue("Change the account data");
             }
