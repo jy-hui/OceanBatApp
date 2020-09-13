@@ -1,5 +1,7 @@
 package com.example.oceanbatapp;
 
+
+
 public class Booking {
 
     private String address;
@@ -8,7 +10,8 @@ public class Booking {
     private String ServicesTime;
     private String Other;
 
-    public Booking() {
+
+    public Booking(){
 
     }
     public Booking(String address, String BookingDate, String servicesDate, String servicesTime, String other) {
@@ -19,6 +22,9 @@ public class Booking {
         Other = other;
 
     }
+
+
+
     public String getAddress() {
         return address;
     }
