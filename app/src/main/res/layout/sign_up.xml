@@ -150,17 +150,18 @@
         app:layout_constraintVertical_bias="0.677"
         tools:ignore="OnClick" />
 
-    <EditText
+    <Button
         android:id="@+id/input_text_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="205dp"
+        android:layout_height="51dp"
         android:ems="10"
-        android:inputType="date"
-        android:hint="Birthday"
+        android:hint="Select Birth Date"
         app:layout_constraintBaseline_toBaselineOf="@+id/Birthdate_textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
     <TextView
         android:id="@+id/phone_text"
@@ -180,10 +181,13 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="phone"
+        android:hint="Phone Number"
         app:layout_constraintBaseline_toBaselineOf="@+id/phone_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toEndOf="@+id/phone_text" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
