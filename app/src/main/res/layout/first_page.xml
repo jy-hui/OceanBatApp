@@ -10,40 +10,51 @@
 
 
     <ImageView
-        android:id="@+id/imageView_logo"
-        android:layout_width="418dp"
-        android:layout_height="257dp"
-        android:layout_marginTop="124dp"
+        android:id="@+id/imageView_Logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        android:transitionName="logo_image"
+        app:layout_constraintBottom_toTopOf="@+id/textViewFP1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_ocean_bat" />
 
-    <Button
-        android:id="@+id/button_login"
-        android:layout_width="131dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="39dp"
-        android:background="@drawable/round_button"
-        android:text="@string/login"
-        android:textSize="25sp"
-        android:textStyle="bold"
+    <TextView
+        android:id="@+id/textViewFP1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/bangers"
+        android:text="Ocean Bat"
+        android:textAlignment="center"
+        android:textSize="70sp"
+        android:transitionName="logo_text"
+        app:fontFamily="@font/bangers"
+        app:layout_constraintBottom_toTopOf="@+id/textViewFP2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_Logo" />
 
-    <Button
-        android:id="@+id/button_signUp"
-        android:layout_width="149dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/round_button"
-        android:text="@string/signUp"
-        android:textSize="25sp"
-        android:textStyle="bold"
+    <TextView
+        android:id="@+id/textViewFP2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:fontFamily="@font/antic"
+        android:text="Cleaning Booking App"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:fontFamily="@font/antic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_login" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewFP1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,9 +7,12 @@
     <string name="nav_header">Menu</string>
     <string name="open_text">open</string>
     <string name="close_text">close</string>
-    <string name="login">LOGIN</string>
-    <string name="email">Email :</string>
-    <string name="password">password :</string>
+    //LOGIN PAGE
+    <string name="LOGIN">LOGIN</string>
+    <string name="Email">Email :</string>
+    <string name="Password">Password :</string>
+
+    //
     <string name="Login">login</string>
     <string name="signUp">SIGN UP</string>
     <string name="text_home">HOME</string>
@@ -40,7 +43,8 @@
         \n\n **************</string>
     <string name="detail_garden">*********
         \n\n **************</string>
-    <string name="Password">password</string>
+    <string name="password">password</string>
+    <string name="email">email</string>
     <string name="birthdate">Birth Date</string>
     <string name="name_text">Name</string>
     <string name="rePassword">Re-Password</string>

@@ -23,6 +23,7 @@ import android.widget.Toast;
 public class ActivityLogin extends AppCompatActivity  {
     EditText  mEmail, mPassword;
     Button mLoginBtn;
+    Button mSignUpBtn;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
     @SuppressLint("WrongViewCast")
@@ -34,6 +35,7 @@ public class ActivityLogin extends AppCompatActivity  {
         mEmail = findViewById(R.id.text_input_email);
         mPassword = findViewById(R.id.text_input_password);
         mLoginBtn = findViewById(R.id.Login_button);
+        mSignUpBtn = findViewById(R.id.button_SignUp);
         progressBar = findViewById(R.id.progressBar);
 
         fAuth = FirebaseAuth.getInstance();
@@ -77,5 +79,13 @@ public class ActivityLogin extends AppCompatActivity  {
 
             }
         });
+        mSignUpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ActivityLogin.this,SignUp.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
