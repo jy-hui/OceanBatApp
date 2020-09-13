@@ -12,6 +12,18 @@
     <string name="Email">Email :</string>
     <string name="Password">Password :</string>
 
+    //SignUp Page
+    <string name="password">password</string>
+    <string name="email">email</string>
+    <string name="birthdate">Birth Date :</string>
+    <string name="name_text">Name :</string>
+    <string name="rePassword">Re-Password :</string>
+    <string name="date">DD/MM/YYYY</string>
+    <string name="input_name">Enter Your Name</string>
+    <string name="register_name">Enter Your Name</string>
+    <string name="settings_text">Settings</string>
+    <string name="log_out_text">Log Out</string>
+
     //
     <string name="Login">login</string>
     <string name="signUp">SIGN UP</string>
@@ -43,16 +55,6 @@
         \n\n **************</string>
     <string name="detail_garden">*********
         \n\n **************</string>
-    <string name="password">password</string>
-    <string name="email">email</string>
-    <string name="birthdate">Birth Date</string>
-    <string name="name_text">Name</string>
-    <string name="rePassword">Re-Password</string>
-    <string name="date">DD/MM/YYYY</string>
-    <string name="input_name">Enter Your Name</string>
-    <string name="register_name">Enter Your Name</string>
-    <string name="settings_text">Settings</string>
-    <string name="log_out_text">Log Out</string>
 
 
 

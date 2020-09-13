@@ -39,6 +39,7 @@ public class SignUp extends AppCompatActivity {
 
     EditText mFullName, mEmail, mPassword, mPhoneNo, mBirthday, mRepassword;
     Button mRegisterBtn;
+    Button loginButton;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
     FirebaseDatabase rootNode;
@@ -61,6 +62,7 @@ public class SignUp extends AppCompatActivity {
         mPhoneNo = findViewById(R.id.input_text_phone);
         mRegisterBtn = findViewById(R.id.signUp_button);
         fAuth = FirebaseAuth.getInstance();
+        loginButton = findViewById(R.id.button_login);
 
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
@@ -167,7 +169,12 @@ public class SignUp extends AppCompatActivity {
               //  reference.setValue("Change the account data");
             }
         });
-
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(SignUp.this,ActivityLogin.class);
+                startActivity(intent);
+            }
+        });
 
 
         /*final Button Login = findViewById(R.id.signUp_button);

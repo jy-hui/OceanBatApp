@@ -1,193 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
+    android:background="@color/White"
+    android:padding="20dp"
     tools:context=".ActivityLogin">
 
-    <TextView
-        android:layout_width="118dp"
-        android:layout_height="80dp"
-        android:gravity="center"
-        android:text="@string/signUp"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.216" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="47dp"
-        android:layout_height="29dp"
-        android:text="@string/email"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Birthdate_textView"
-        app:layout_constraintVertical_bias="0.535" />
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:src="@drawable/logo_ocean_bat" />
 
-    <TextView
-        android:id="@+id/name_text"
-        android:layout_width="47dp"
-        android:layout_height="29dp"
-        android:text="@string/name_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
+        <TextView
+            android:id="@+id/logo_sentence1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bangers"
+            android:gravity="center"
+            android:text="Welcome"
+            android:textColor="@color/Black"
+            android:textSize="40sp"
+            android:transitionName="logo_text"
+            android:layout_below="@+id/logo_image"/>
 
-    <EditText
-        android:id="@+id/text_input_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        app:errorEnabled="true"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.314"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:passwordToggleEnabled="true" />
+        <TextView
+            android:id="@+id/logo_sentence2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SignUp to start your new order"
+            android:textSize="18sp"
+            android:transitionName="logo_desc"
+            android:layout_below="@+id/logo_sentence1"/>
 
-    <EditText
-        android:id="@+id/text_input_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textEmailAddress"
-        app:errorEnabled="true"
-        app:layout_constraintBaseline_toBaselineOf="@+id/name_text"
-        app:layout_constraintStart_toEndOf="@+id/name_text"
-        app:passwordToggleEnabled="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:layout_below="@+id/logo_sentence2">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/password"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.615" />
+            <TextView
+                android:id="@+id/name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_text"
+                android:textColor="@color/Black"
+                android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/rePassword_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/rePassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698" />
+            <EditText
+                android:id="@+id/text_input_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="name"
+                android:inputType="textPersonName"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true" />
 
-    <TextView
-        android:id="@+id/Birthdate_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/birthdate"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.074"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.448" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Email"
+                android:textColor="@color/Black"
+                android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/text_input_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/Password"
-        android:inputType="textPassword"
-        android:onClick="confirmInput"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.241"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        tools:ignore="OnClick" />
+            <EditText
+                android:id="@+id/text_input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="email"
+                android:inputType="textEmailAddress"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true" />
 
-    <EditText
-        android:id="@+id/text_input_rePassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:onClick="confirmInput"
-        app:layout_constraintBaseline_toBaselineOf="@+id/rePassword_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.241"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        tools:ignore="OnClick" />
+            <TextView
+                android:id="@+id/Birthdate_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/birthdate"
+                android:textColor="@color/Black"
+                android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/signUp_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="LoginInput"
-        android:text="@string/signUp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_input_password"
-        app:layout_constraintVertical_bias="0.677"
-        tools:ignore="OnClick" />
+            <Button
+                android:id="@+id/input_text_date"
+                android:layout_width="200dp"
+                android:layout_height="51dp"
+                android:layout_marginLeft="120dp"
+                android:background="@color/LightSeaGreen"
+                android:ems="10"
+                android:hint="Select Birth Date"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/input_text_date"
-        android:layout_width="205dp"
-        android:layout_height="51dp"
-        android:ems="10"
-        android:hint="Select Birth Date"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Birthdate_textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/phone_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:textColor="@color/Black"
+                android:textSize="18sp" />
 
+            <EditText
+                android:id="@+id/input_text_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Phone Number"
+                android:inputType="phone" />
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Password"
+                android:textColor="@color/Black"
+                android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/phone_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phone Number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.015"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rePassword_text"
-        app:layout_constraintVertical_bias="0.198" />
+            <EditText
+                android:id="@+id/text_input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/Password"
+                android:inputType="textPassword" />
 
-    <EditText
-        android:id="@+id/input_text_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        android:hint="Phone Number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/phone_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
-        app:layout_constraintStart_toEndOf="@+id/phone_text" />
+            <TextView
+                android:id="@+id/rePassword_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rePassword"
+                android:textColor="@color/Black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/text_input_rePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Confirm Password"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/signUp_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/signUp"
+                android:background="@color/LightSeaGreen"
+                android:textColor="@color/White"/>
+
+            <Button
+                android:id="@+id/button_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Already Have An Account? LOGIN Now!"
+                android:background="@color/White"
+                android:textColor="@color/Black"/>
+
+        </LinearLayout>
 
 
+    </RelativeLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
