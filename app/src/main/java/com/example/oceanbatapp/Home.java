@@ -40,11 +40,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener
 
     }
 
-    public void logout(View view){
+    /*public void logout(View view){
         FirebaseAuth.getInstance().signOut(); //logout
         startActivity(new Intent(getApplicationContext(), FirstPage.class));
         finish();
-    }
+    }*/
 
         @Override
         public void onClick(View view) {

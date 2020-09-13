@@ -3,7 +3,10 @@ package com.example.oceanbatapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -15,16 +18,25 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 
 /*public class SignUp extends AppCompatActivity implements View.OnClickListener {*/
 public class SignUp extends AppCompatActivity {
+
+    private static final String TAG = "SignUp";
+
+    private TextView mDisplayDate;
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
+
     EditText mFullName, mEmail, mPassword, mPhoneNo, mBirthday, mRepassword;
     Button mRegisterBtn;
     TextView mLoginBtn;
@@ -40,18 +52,45 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
 
+        mDisplayDate = (TextView) findViewById(R.id.input_text_date);
         mRepassword = findViewById(R.id.text_input_rePassword);
-        mBirthday = findViewById(R.id.input_text_date);
+       // mBirthday = findViewById(R.id.input_text_date);
         mFullName = findViewById(R.id.text_input_name);
         mEmail = findViewById(R.id.text_input_email);
         mPassword = findViewById(R.id.text_input_password);
         mPhoneNo = findViewById(R.id.input_text_phone);
-
         mRegisterBtn = findViewById(R.id.signUp_button);
-
         fAuth = FirebaseAuth.getInstance();
 
 
+        mDisplayDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        SignUp.this,
+                        android.R.style.Theme_Translucent_NoTitleBar,
+                        mDateSetListener,
+                        year, month, day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                Log.d(TAG, "onDateSet: mm/dd/yyy: " + month + "/" + day + "/" + year);
+
+                String date = month + "/" + day + "/" + year;
+                mDisplayDate.setText(date);
+            }
+        };
 
         /*if (fAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), Home.class));
@@ -64,7 +103,7 @@ public class SignUp extends AppCompatActivity {
                 email = mEmail.getText().toString().trim();
                 password = mPassword.getText().toString().trim();
                 Username = mFullName.getText().toString().trim();
-                Birthday = mBirthday.getText().toString().trim();
+                Birthday =  mDisplayDate.getText().toString().trim();
                 phoneNo = mPhoneNo.getText().toString().trim();
                 String Repassword = mRepassword.getText().toString().trim();
 
@@ -73,7 +112,7 @@ public class SignUp extends AppCompatActivity {
                     return;
                 }
                 else if(TextUtils.isEmpty((Birthday))) {
-                    mBirthday.setError("Birthday is required");
+                    mDisplayDate.setError("Birthday is required");
                     return;
                 }else if (TextUtils.isEmpty((email))) {
                     mEmail.setError("Email is Required");
@@ -109,7 +148,7 @@ public class SignUp extends AppCompatActivity {
                                 reference.child("Birthday").setValue(Birthday);
                                 reference.child("phoneNo").setValue(phoneNo);
                                 Toast.makeText(SignUp.this, "User Created.", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), Home.class));
+                                startActivity(new Intent(getApplicationContext(), NavigationDrawer.class));
                             } else {
                                 Toast.makeText(SignUp.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
