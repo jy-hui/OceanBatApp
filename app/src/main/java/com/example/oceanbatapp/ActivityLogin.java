@@ -69,8 +69,9 @@ public class ActivityLogin extends AppCompatActivity  {
                      }
                      else{
                          Toast.makeText(ActivityLogin.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                         progressBar.setVisibility(View.GONE);
+
                      }
+                        progressBar.setVisibility(View.GONE);
                     }
                 });
 

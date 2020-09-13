@@ -15,7 +15,6 @@ public class Home extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
 
         final Button carDetail = findViewById(R.id.button_detail_car);
         final Button carBook = findViewById(R.id.button_book_car);
@@ -58,8 +57,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener
                 case R.id.button_book_car:
                 case R.id.button_book_motor:
                 case R.id.button_book_house:
-                case R.id.button_book_garden: {
-                    Intent intent = new Intent(Home.this,BookingPage.class);
+                case R.id.button_book_garden:{
+                    Intent intent = new Intent(Home.this, BookingPage.class);
                     startActivity(intent);
                     break;
                 }
