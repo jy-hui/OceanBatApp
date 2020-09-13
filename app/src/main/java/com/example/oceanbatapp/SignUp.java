@@ -148,7 +148,7 @@ public class SignUp extends AppCompatActivity {
                                 reference.child("Birthday").setValue(Birthday);
                                 reference.child("phoneNo").setValue(phoneNo);
                                 Toast.makeText(SignUp.this, "User Created.", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), Home.class));
+                                startActivity(new Intent(getApplicationContext(), NavigationDrawer.class));
                             } else {
                                 Toast.makeText(SignUp.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
