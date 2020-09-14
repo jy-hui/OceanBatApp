@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -13,6 +14,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -27,16 +31,21 @@ import java.util.List;
 
 public class Profile extends AppCompatActivity {
 
-     TextView mName, mEmail, mBirthDate, mPhoneNo;
+     EditText mName, mEmail, mBirthDate, mPhoneNo;
      ImageView mProfilePic;
-     Button mProfileBtn;
+     Button mUpdateBtn;
      DatabaseReference databaseReference;
      FirebaseUser user;
 
 
 
 
-    String userID, email, password, Username, Birthday, phoneNo;
+    String userID;
+    String email;
+    String password;
+    String Username;
+    String Birthday;
+    String phoneNo;
 
 
 
@@ -51,6 +60,7 @@ public class Profile extends AppCompatActivity {
         mBirthDate = findViewById(R.id.profileBirthDate);
         mPhoneNo = findViewById(R.id.profilePhoneNo);
         mProfilePic = findViewById(R.id.profilePic);
+        mUpdateBtn = findViewById(R.id.updateBtn);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid();
@@ -80,7 +90,9 @@ public class Profile extends AppCompatActivity {
                  */
 
                 mName.setText(Username);
-                Toast.makeText(Profile.this, Username, Toast.LENGTH_SHORT).show();
+                mEmail.setText(email);
+                mBirthDate.setText(Birthday);
+                mPhoneNo.setText(phoneNo);
 
 
 
@@ -94,6 +106,12 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+        mUpdateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
 
 

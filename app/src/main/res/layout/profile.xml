@@ -26,28 +26,19 @@
                 android:layout_marginTop="100dp"
                 android:src="@drawable/example_profile" />
 
-            <TextView
+            <EditText
                 android:id="@+id/profileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="Sumiya"
+                android:text="Name"
                 android:textColor="#fff"
                 android:textSize="21sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_profile_setting"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="15dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"/>
         
     </RelativeLayout>
     
@@ -74,13 +65,13 @@
                     android:text="Email"
                     android:textSize="13sp"/>
 
-                <TextView
+                <EditText
                     android:id="@+id/profileEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:textColor="#000000"
-                    android:text="Zuwei_99@hotmail.com"
+                    android:text="Email"
                     android:textSize="18sp"/>
                 
                 <View
@@ -103,13 +94,13 @@
                     android:text="Birth Date"
                     android:textSize="13sp"/>
 
-                <TextView
+                <EditText
                     android:id="@+id/profileBirthDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:textColor="#000000"
-                    android:text="9/8/2020"
+                    android:text="Date"
                     android:textSize="18sp"/>
 
                 <View
@@ -132,13 +123,13 @@
                     android:text="Phone Number"
                     android:textSize="13sp"/>
 
-                <TextView
+                <EditText
                     android:id="@+id/profilePhoneNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:textColor="#000000"
-                    android:text="017-7303200"
+                    android:text="Phone Number"
                     android:textSize="18sp"/>
 
                 <View
@@ -151,6 +142,16 @@
 
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/updateBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="45dp"
+            android:text="Update" />
 
 
     </RelativeLayout>
