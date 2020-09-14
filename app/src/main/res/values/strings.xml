@@ -45,6 +45,9 @@
 
     <string name="text_details">DETAILS</string>
 
+    //History Page
+    <string name="text_title_history">Whats make you come to</string>
+    <string name="text_title_page_history">HISTORY PAGE</string>
 
     //Button
     <string name ="text_BACK">BACK</string>
