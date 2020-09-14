@@ -21,15 +21,24 @@
             android:background="@drawable/gradientbackground"
             android:orientation="vertical">
 
-            <ImageView
-            android:id="@+id/profilePic"
-            android:layout_width="200dp"
-            android:layout_height="170dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            <Button
+                android:id="@+id/editProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Edit" />
 
-            <EditText
+            <ImageView
+                android:id="@+id/profilePic"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
                 android:id="@+id/profileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:text="Email"
                 android:textSize="13sp"/>
-            <EditText
+            <TextView
                 android:id="@+id/profileEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,15 +75,17 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="15dp" />
+                android:layout_marginTop="15dp"
+                android:background="@color/Gray" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Birth Date"
+                android:layout_marginTop="10dp"
                 android:textSize="13sp"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/profileBirthDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,15 +97,19 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="15dp" />
+                android:layout_marginTop="15dp"
+                android:background="@color/Gray" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Phone Number"
+                android:layout_marginTop="10dp"
                 android:textSize="13sp"/>
 
-            <EditText
+
+
+            <TextView
                 android:id="@+id/profilePhoneNo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,18 +118,14 @@
                 android:text="Phone Number"
                 android:textSize="18sp"/>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/Gray" />
+
         </LinearLayout>
 
-        <Button
-            android:id="@+id/updateBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="45dp"
-            android:layout_below="@+id/box2"
-            android:text="Update" />
 
 
 

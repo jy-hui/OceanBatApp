@@ -168,7 +168,12 @@ public class Profile extends AppCompatActivity {
                     }
                 });
 
+                Intent intent = new Intent(Profile.this,ShowProfile.class);
+                startActivity(intent);
+
             }
+
+
         });
 
 

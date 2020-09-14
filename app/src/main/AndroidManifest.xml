@@ -38,6 +38,8 @@
         </activity>
         <activity android:name=".Profile">
         </activity>
+        <activity android:name=".ShowProfile">
+        </activity>
         <activity android:name=".DetailService">
         </activity>
 
