@@ -121,6 +121,7 @@
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
         <LinearLayout
@@ -251,6 +252,7 @@
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
         <LinearLayout
@@ -279,6 +281,7 @@
                         android:layout_height="177dp"
                         android:src="@drawable/cleaning_garden"
                         android:background="@color/White"/>
+
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -316,6 +319,32 @@
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/home_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_cleaning" />
+
+        <Button
+            android:id="@+id/profile_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_text"
+            app:layout_constraintBaseline_toBaselineOf="@+id/home_button"
+            app:layout_constraintStart_toEndOf="@+id/home_button" />
+
+        <Button
+            android:id="@+id/favourite_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/favourite_text"
+            app:layout_constraintBaseline_toBaselineOf="@+id/profile_button"
+            app:layout_constraintStart_toEndOf="@+id/profile_button" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

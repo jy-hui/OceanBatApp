@@ -1,5 +1,6 @@
 package com.example.oceanbatapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ public class Fragment_Home extends androidx.fragment.app.Fragment {
 
     public View onCreateView(@Nullable LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view=inflater.inflate(R.layout.home,container,false);
+
         return view;
     }
 }

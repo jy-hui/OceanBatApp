@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,6 +39,13 @@ public  class BookingPage extends AppCompatActivity {
         String userID;
         FirebaseAuth fAuth;
 
+        Intent intent = getIntent();
+
+        String servicesName;
+
+        String servicesType = intent.getStringExtra(servicesName);
+
+        TextView receiver = (TextView) findViewById(R.id.services_type_name_text);
 
         private Spinner spinner;
 
@@ -54,6 +62,8 @@ public  class BookingPage extends AppCompatActivity {
                 Category.add("Motorcycle services Cleaning");
                 Category.add("House services Cleaning");
                 Category.add("Garden services Cleaning");
+
+                receiver.setText(servicesType);
 
 
                 final ArrayAdapter<String> dataAdpter;
