@@ -55,7 +55,7 @@ public class Profile extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference("account");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -72,11 +72,15 @@ public class Profile extends AppCompatActivity {
                 Birthday = dataSnapshot.child(userID).child("Brithday").getValue(String.class);
                 phoneNo = dataSnapshot.child(userID).child("phoneNo").getValue(String.class);
 
-                email = mEmail.getText().toString().trim();
+                /*email = mEmail.getText().toString().trim();
                 Username = mName.getText().toString().trim();
                 Birthday =  mBirthDate.getText().toString().trim();
                 phoneNo = mPhoneNo.getText().toString().trim();
 
+                 */
+
+                mName.setText(Username);
+                Toast.makeText(Profile.this, Username, Toast.LENGTH_SHORT).show();
 
 
 
