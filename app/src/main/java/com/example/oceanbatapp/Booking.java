@@ -1,8 +1,6 @@
 package com.example.oceanbatapp;
 
 
-import android.widget.Spinner;
-
 public class Booking {
 
     private String address;

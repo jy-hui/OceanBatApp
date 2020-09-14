@@ -35,7 +35,6 @@ import java.util.List;
 import static android.os.Build.VERSION_CODES.O;
 
 public  class BookingPage extends AppCompatActivity {
-        private Spinner spinner;
         EditText mAddress, mBookD, mServicesD, mServicesT, mOther,mServices;
         Button Mbook;
         FirebaseAuth fAuth;
@@ -99,6 +98,7 @@ public  class BookingPage extends AppCompatActivity {
                                         reference.child("ServicesTime").setValue(ServicesT);
                                         reference.child("Other Information").setValue(Other);
                                         reference.child("Services").setValue(Services);
+                                        Toast.makeText(BookingPage.this, "Booking have been add", Toast.LENGTH_SHORT).show();
                                 }
                                 Booking booking = new Booking(Address, Book, ServicesD, ServicesT, Other,Services);
                         }
