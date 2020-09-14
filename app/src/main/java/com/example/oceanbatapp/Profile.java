@@ -31,6 +31,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+//import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -49,8 +50,10 @@ public class Profile extends AppCompatActivity {
      DatabaseReference databaseReference;
      FirebaseUser user;
      Uri imageUri;
-     private FirebaseStorage storage;
-     private StorageReference storageReference;
+     FirebaseStorage storage;
+     StorageReference storageReference;
+     FirebaseAuth fAuth;
+     //FirebaseFirestore fStore;
 
 
 
@@ -81,8 +84,9 @@ public class Profile extends AppCompatActivity {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid();
-
         databaseReference = FirebaseDatabase.getInstance().getReference("account");
+        fAuth = FirebaseAuth.getInstance();
+       // fStore = FirebaseFirestore.getInstance();
 
 
 
@@ -98,7 +102,7 @@ public class Profile extends AppCompatActivity {
 
                 Username = dataSnapshot.child(userID).child("Username").getValue(String.class);
                 email = dataSnapshot.child(userID).child("email").getValue(String.class);
-                Birthday = dataSnapshot.child(userID).child("Brithday").getValue(String.class);
+                Birthday = dataSnapshot.child(userID).child("Birthday").getValue(String.class);
                 phoneNo = dataSnapshot.child(userID).child("phoneNo").getValue(String.class);
 
                 /*email = mEmail.getText().toString().trim();
