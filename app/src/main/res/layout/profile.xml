@@ -27,7 +27,7 @@
             android:layout_height="170dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp"
-            android:src="@drawable/example_profile" />
+            tools:srcCompat="@tools:sample/avatars" />
 
             <EditText
                 android:id="@+id/profileName"
