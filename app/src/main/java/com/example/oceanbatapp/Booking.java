@@ -10,23 +10,7 @@ public class Booking {
     private String Other;
     private String Services;
 
-    public Booking(){
-
-    }
-    public Booking(String address, String BookingDate, String servicesDate, String servicesTime, String other, String services) {
-        this.address = address;
-        this.BookingDate = BookingDate;
-        ServicesDate = servicesDate;
-        ServicesTime = servicesTime;
-        Other = other;
-        Services = services;
-
-
-    }
-
-    public String getServices() {return Services;}
-
-    public void setServices(String services) {Services = services;}
+    public Booking(){}
 
     public String getAddress() {
         return address;
@@ -36,7 +20,7 @@ public class Booking {
         this.address = address;
     }
 
-    public String getBookingDate(String trim) {
+    public String getBookingDate() {
         return BookingDate;
     }
 
@@ -44,7 +28,7 @@ public class Booking {
         BookingDate = bookingDate;
     }
 
-    public String getServicesDate(String trim) {
+    public String getServicesDate() {
         return ServicesDate;
     }
 
@@ -52,7 +36,7 @@ public class Booking {
         ServicesDate = servicesDate;
     }
 
-    public String getServicesTime(String trim) {
+    public String getServicesTime() {
         return ServicesTime;
     }
 
@@ -60,11 +44,19 @@ public class Booking {
         ServicesTime = servicesTime;
     }
 
-    public String getOther(String trim) {
+    public String getOther() {
         return Other;
     }
 
     public void setOther(String other) {
         Other = other;
+    }
+
+    public String getServices() {
+        return Services;
+    }
+
+    public void setServices(String services) {
+        Services = services;
     }
 }
