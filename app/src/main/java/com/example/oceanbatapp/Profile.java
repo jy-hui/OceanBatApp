@@ -122,7 +122,7 @@ public class Profile extends AppCompatActivity {
                 hashMap.put("Birthday",Birthday);
                 hashMap.put("phoneNo",phoneNo);
 
-                databaseReference.child("account").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                databaseReference.child(userID).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
                     @Override
                     public void onSuccess(Object o) {
                         Toast.makeText(Profile.this, "Your Data is Successfully Updated", Toast.LENGTH_SHORT).show();
