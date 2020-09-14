@@ -15,7 +15,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.home);
 
         final Button carDetail = findViewById(R.id.button_detail_car);
         final Button carBook = findViewById(R.id.button_book_car);
@@ -49,22 +49,37 @@ public class Home extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View view) {
-        String servicesName = "";
-        String servicesType = "";
+        //String servicesName = "";
+        //String servicesType = "";
 
         switch (view.getId()){
             case R.id.button_detail_car: {
-                Intent intent = new Intent(Home.this,DetailCar.class);
+                Intent intent = new Intent(Home.this,DetailService.class).putExtra("pass","car");
                 startActivity(intent);
                 break;
             }
-            case R.id.button_book_car:{
-                Intent intent = new Intent(Home.this,BookingPage.class);
-                servicesName= getString(R.string.text_car);
-
-                intent.putExtra(servicesName, servicesType);
+            case R.id.button_detail_motor: {
+                Intent intent = new Intent(Home.this,DetailService.class).putExtra("pass","motor");
+                startActivity(intent);
                 break;
             }
+            case R.id.button_detail_house: {
+                Intent intent = new Intent(Home.this,DetailService.class).putExtra("pass","house");
+                startActivity(intent);
+                break;
+            }
+            case R.id.button_detail_garden: {
+                Intent intent = new Intent(Home.this,DetailService.class).putExtra("pass","garden");
+                startActivity(intent);
+                break;
+            }
+            case R.id.button_book_car://{
+                //Intent intent = new Intent(Home.this,BookingPage.class);
+                //servicesName= getString(R.string.text_car);
+                //intent.putExtra(servicesName, servicesType);
+                //startActivity(intent);
+               // break;
+         //   }
             case R.id.button_book_motor:
             case R.id.button_book_house:
             case R.id.button_book_garden:{
@@ -72,23 +87,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener
                 startActivity(intent);
                 break;
             }
-            case R.id.button_detail_motor: {
-                Intent intent = new Intent(Home.this,DetailMotorcycle.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.button_detail_house: {
-                Intent intent = new Intent(Home.this,DetailHouse.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.button_detail_garden: {
-                Intent intent = new Intent(Home.this,DetailGarden.class);
-                startActivity(intent);
-                break;
-            }
+
         }
-
-
     }
 }
