@@ -16,6 +16,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         final Button carDetail = findViewById(R.id.button_detail_car);
         final Button carBook = findViewById(R.id.button_book_car);
         carDetail.setOnClickListener(this);
@@ -49,7 +50,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View view) {
         String servicesName = "";
-
+        String servicesType = "";
 
         switch (view.getId()){
             case R.id.button_detail_car: {
@@ -59,7 +60,9 @@ public class Home extends AppCompatActivity implements View.OnClickListener
             }
             case R.id.button_book_car:{
                 Intent intent = new Intent(Home.this,BookingPage.class);
-                intent.putExtra(getString(R.string.text_car), servicesName);
+                servicesName= getString(R.string.text_car);
+
+                intent.putExtra(servicesName, servicesType);
                 break;
             }
             case R.id.button_book_motor:
