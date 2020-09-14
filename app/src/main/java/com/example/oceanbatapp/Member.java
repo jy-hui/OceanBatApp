@@ -6,8 +6,13 @@ public class Member {
 
     public Member(){}
 
-    public String getSpinner() {
-        return spinner;
+    public Member(String Spinner){
+        this.spinner = Spinner;
+
+    }
+
+        public String getSpinner() {
+            return spinner;
     }
 
     public void setSpinner(String spinner) {

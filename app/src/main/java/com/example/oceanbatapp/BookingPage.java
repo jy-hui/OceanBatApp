@@ -43,7 +43,7 @@ public  class BookingPage extends AppCompatActivity {
         DatabaseReference reference;
         String userID, Address, Book, ServicesD, ServicesT,Other;
         int maxid = 0;
-        Member member;
+        Booking member;
 
       
 
@@ -54,9 +54,9 @@ public  class BookingPage extends AppCompatActivity {
                 setContentView(R.layout.booking);
 
                 spinner = findViewById(R.id.spinner2);
-                member = new Member();
+                member = new Booking();
                 Mbook = findViewById(R.id.Book_button);
-                reference = rootNode.getInstance().getReference().child("Spinner");
+                reference = rootNode.getInstance().getReference().child("Services type");
 
                 List<String> Category = new ArrayList<>();
                 Category.add("Choose services");
@@ -69,6 +69,7 @@ public  class BookingPage extends AppCompatActivity {
                 dataAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, Category);
 
                 dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
 
                 spinner.setAdapter(dataAdapter);
 
@@ -152,7 +153,7 @@ public  class BookingPage extends AppCompatActivity {
                                         reference.child("Other Information").setValue(Other);
                                         reference.child(String.valueOf(maxid+1)).setValue(member);
                                 }
-                                Booking booking = new Booking(Address, Book, ServicesD, ServicesT, Other);
+                                Booking booking = new Booking(Address, Book, ServicesD, ServicesT, Other,spinner);
                         }
                 });
 

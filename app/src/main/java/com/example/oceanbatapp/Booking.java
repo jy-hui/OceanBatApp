@@ -1,6 +1,7 @@
 package com.example.oceanbatapp;
 
 
+import android.widget.Spinner;
 
 public class Booking {
 
@@ -9,21 +10,27 @@ public class Booking {
     private String ServicesDate;
     private String ServicesTime;
     private String Other;
-
+    private String Spinner;
 
     public Booking(){
 
     }
-    public Booking(String address, String BookingDate, String servicesDate, String servicesTime, String other) {
+    public Booking(String address, String BookingDate, String servicesDate, String servicesTime, String other, String spinner) {
         this.address = address;
         this.BookingDate = BookingDate;
         ServicesDate = servicesDate;
         ServicesTime = servicesTime;
         Other = other;
+        Spinner = spinner;
 
     }
 
+    public Booking(String address, String book, String servicesD, String servicesT, String other, android.widget.Spinner spinner) {
+    }
 
+    public String getSpinner() { return Spinner;}
+
+    public void setSpinner(String spinner) {Spinner = spinner;}
 
     public String getAddress() {
         return address;
