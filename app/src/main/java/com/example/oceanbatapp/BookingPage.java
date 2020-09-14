@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -74,6 +75,7 @@ public  class BookingPage extends AppCompatActivity {
                                 booking.setOther(mOther.getText().toString());
 
                                 ref.child(String.valueOf(maxid+1)).setValue(booking);
+                                Toast.makeText(BookingPage.this, "Your services have been add.", Toast.LENGTH_SHORT).show();
                         }
                 });
         }
