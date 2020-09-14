@@ -11,7 +11,8 @@ public class Booking {
     private String spinner;
    // private String Services;
 
-    public Booking(){}
+    public Booking() {
+    }
 
     public String getSpinner() {return spinner; }
 
