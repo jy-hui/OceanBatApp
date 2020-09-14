@@ -45,7 +45,7 @@ public class FirstPage extends AppCompatActivity {
 
         new Handler().postDelayed(new Runnable(){
             public void run(){
-                Intent intent = new Intent (FirstPage.this,Home.class);
+                Intent intent = new Intent (FirstPage.this,ActivityLogin.class);
 
                 Pair[] pairs = new Pair[2];
                 pairs[0] = new Pair<View,String>(image,"logo_image");
