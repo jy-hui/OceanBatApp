@@ -42,21 +42,53 @@
     <string name="description_hint">description</string>
     <string name="address_here_hint">Address Here</string>
     <string name="logo_text">Logo</string>
+
     <string name="text_details">DETAILS</string>
-    <string name="detail_car">Make a booking for us, we will wait you at our
+
+
+    //Button
+    <string name ="text_BACK">BACK</string>
+    <string name ="text_BOOK">BOOK</string>
+    <string name ="text_DETAIL">DETAIL</string>
+
+
+    //Detail Pages
+    <string name="details_title_page">DETAILS PAGE</string>
+    //Detail Car
+    <string name="detail_title_car">DETAIL CAR SERVICE</string>
+    <string name="detail_paragraph_car">Make a booking for us, we will wait you at our
     shop prepared to wash your car to the cleanest.
     \n\n  Operating Hour: 9am to 11am,
     \n 1pm to 6pm
     \n\n Price: Basic Cleaning 10 to 20 according to car size
     \n\n Full Cleaning including waxing : \n Below RM100</string>
-    <string name="detail_motorcycle">*********
-        \n\n **************</string>
-    <string name="detail_house">*********
-        \n\n **************</string>
-    <string name="detail_garden">*********
-        \n\n **************</string>
 
+    //Detail Motorcycle
+    <string name="detail_title_motorcycle">DETAIL MOTORCYCLE SERVICE</string>
+    <string name="detail_paragraph_motorcycle">Make a booking for us, we will wait you at our
+    shop prepared to wash your motorcycle to the cleanest.
+    \n\n  Operating Hour: 9am to 11am,
+    \n 1pm to 6pm
+    \n\n Price: Basic Cleaning 10 to 20 according to motorcycle size
+    \n\n Full Cleaning including waxing : \n Below RM50</string>
 
+    //Detail House
+    <string name="detail_title_house">DETAIL HOUSE SERVICE</string>
+    <string name="detail_paragraph_house">Make a booking for us, we will go to your place and our
+    shop will clean your house to the cleanest.
+    \n\n  Operating Hour: 9am to 11am,
+    \n 1pm to 6pm
+    \n\n Price: Basic Cleaning 10 to 20 according to house size
+    \n\n Full Cleaning including waxing : \n Below RM200</string>
+
+    //Detail Garden
+    <string name="detail_title_garden">DETAIL GARDEN SERVICE</string>
+    <string name="detail_paragraph_garden">Make a booking for us, we will go to your place and our
+    shop will clean your garden to the cleanest.
+    \n\n  Operating Hour: 9am to 11am,
+    \n 1pm to 6pm
+    \n\n Price: Basic Cleaning 10 to 20 according to garden size
+    \n\n Full Cleaning including waxing : \n Below RM200</string>
 
 
 </resources>

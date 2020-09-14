@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "811734522146",
-    "firebase_url": "https://oceanbat-85bf7.firebaseio.com",
-    "project_id": "oceanbat-85bf7",
-    "storage_bucket": "oceanbat-85bf7.appspot.com"
+    "project_number": "1028842912162",
+    "firebase_url": "https://oceanbatapp.firebaseio.com",
+    "project_id": "oceanbatapp",
+    "storage_bucket": "oceanbatapp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:811734522146:android:1b651bf1c0f87a017e6d7b",
+        "mobilesdk_app_id": "1:1028842912162:android:68150b4715125b503e5afb",
         "android_client_info": {
           "package_name": "com.example.oceanbatapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "811734522146-dpbhm18oslj5pior0bkkune638o6j9s1.apps.googleusercontent.com",
+          "client_id": "1028842912162-85qsf34mpjf8ebh6ck4lcem51vnjo8ka.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.oceanbatapp",
-            "certificate_hash": "e337885e9ec1bdb2af3d7947d6bbc6bc3c4db8ce"
+            "certificate_hash": "b24651353be016693e8fc51b4405bb75fe53703e"
           }
         },
         {
-          "client_id": "811734522146-lmovh0rjufmbgn54iohkgir7hgtsic6g.apps.googleusercontent.com",
+          "client_id": "1028842912162-inbkqo314kt9s0u4nt917nqtkg9netdn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCkhxjNNLeP9qJA_VaEA7XF8KLL1r9JKU0"
+          "current_key": "AIzaSyANwZBENPp0BMrJhZ7rA3I5ksZKsG9dNXk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "811734522146-lmovh0rjufmbgn54iohkgir7hgtsic6g.apps.googleusercontent.com",
+              "client_id": "1028842912162-inbkqo314kt9s0u4nt917nqtkg9netdn.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
