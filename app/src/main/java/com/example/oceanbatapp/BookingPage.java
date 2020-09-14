@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +27,7 @@ import java.util.List;
 public  class BookingPage extends AppCompatActivity {
 
 
+        FirebaseAuth mFirebaseAuth;
         FirebaseDatabase database;
         DatabaseReference ref,BK;
         EditText mAddress, mBookD, mServicesD, mServicesT, mOther,mServices;
@@ -81,7 +83,7 @@ public  class BookingPage extends AppCompatActivity {
                 Mbooking = findViewById(R.id.Book_button);
 
                 booking = new Booking();
-                ref = database.getInstance().getReference().child("Booking Detail");
+                ref = database.getInstance().getReference().child("account").child("Booking List");
 
                 ref.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -104,6 +106,7 @@ public  class BookingPage extends AppCompatActivity {
                 Mbooking.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
+
 
                                 booking.setSpinner(spinner.getSelectedItem().toString());
                               //  booking.setServices(mServices.getText().toString());
