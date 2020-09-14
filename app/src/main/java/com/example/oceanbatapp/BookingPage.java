@@ -24,7 +24,6 @@ public  class BookingPage extends AppCompatActivity {
         EditText mAddress, mBookD, mServicesD, mServicesT, mOther,mServices;
         Button Mbooking;
         int maxid=0;
-        private String bk;
 
 
         Booking booking;
