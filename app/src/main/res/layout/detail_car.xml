@@ -19,16 +19,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_ocean_bat" />
 
-    <TextView
-        android:id="@+id/text_service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_car"
-        android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_logo" />
+        <TextView
+            android:id="@+id/text_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_logo" />
 
     <TextView
         android:id="@+id/text_detail"
@@ -41,48 +40,100 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_service" />
 
-    <ImageView
-        android:id="@+id/image_service"
-        android:layout_width="279dp"
-        android:layout_height="189dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_detail"
-        app:srcCompat="@drawable/cleaning_car" />
+        <ImageView
+            android:id="@+id/image_service"
+            android:layout_width="279dp"
+            android:layout_height="189dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.56"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_detail" />
 
-    <TextView
-        android:id="@+id/text_content"
-        android:layout_width="320dp"
-        android:layout_height="278dp"
-        android:text="@string/detail_car"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_service" />
+        <TextView
+            android:id="@+id/text_content"
+            android:layout_width="314dp"
+            android:layout_height="245dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.544"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_service" />
 
-    <Button
-        android:id="@+id/button_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="24dp"
-        android:text="Back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_content" />
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="68dp"
+            android:layout_marginLeft="68dp"
+            android:text="Back"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="816dp" />
 
-    <Button
-        android:id="@+id/button_service_book"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginRight="68dp"
-        android:text="@string/button_book"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_content" />
+        <Button
+            android:id="@+id/button_service_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="84dp"
+            android:layout_marginRight="84dp"
+            android:text="@string/button_book"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="816dp" />
+
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Price"
+            app:layout_constraintTop_toBottomOf="@+id/text_content"
+            tools:layout_editor_absoluteX="68dp" />
+
+        <TextView
+            android:id="@+id/text_wH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Working Hour"
+            app:layout_constraintTop_toBottomOf="@+id/text_price"
+            tools:layout_editor_absoluteX="53dp" />
+
+        <TextView
+            android:id="@+id/text_wD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Working Day"
+            app:layout_constraintTop_toBottomOf="@+id/text_wH"
+            tools:layout_editor_absoluteX="53dp" />
+
+        <TextView
+            android:id="@+id/text_priceD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="211dp"
+            tools:layout_editor_absoluteY="685dp" />
+
+        <TextView
+            android:id="@+id/text_wHD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="210dp"
+            tools:layout_editor_absoluteY="726dp" />
+
+        <TextView
+            android:id="@+id/text_wDD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="211dp"
+            tools:layout_editor_absoluteY="770dp" />
+
+        <Button
+            android:id="@+id/btnload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="147dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

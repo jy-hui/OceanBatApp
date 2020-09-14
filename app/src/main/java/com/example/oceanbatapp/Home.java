@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -15,6 +16,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /*TextView passC = findViewById(R.id.button_detail_car);
+        TextView passM = findViewById(R.id.button_detail_motor);
+        TextView passH = findViewById(R.id.button_detail_house);
+        TextView passG = findViewById(R.id.button_detail_garden);*/
 
         final Button carDetail = findViewById(R.id.button_detail_car);
         final Button carBook = findViewById(R.id.button_book_car);
@@ -36,8 +42,10 @@ public class Home extends AppCompatActivity implements View.OnClickListener
         gardenDetail.setOnClickListener(this);
         gardenBook.setOnClickListener(this);
 
-
-
+        /*String passCar = passC.getText().toString();
+        String passMotor = passM.getText().toString();
+        String passHouse = passH.getText().toString();
+        String passGarden = passG.getText().toString();*/
     }
 
     /*public void logout(View view){
@@ -51,6 +59,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener
             switch (view.getId()){
                 case R.id.button_detail_car: {
                     Intent intent = new Intent(Home.this,DetailCar.class);
+                    /*intent.putExtra("car", passCar);*/
                     startActivity(intent);
                     break;
                 }
