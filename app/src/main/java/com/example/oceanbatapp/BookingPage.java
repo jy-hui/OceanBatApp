@@ -36,14 +36,14 @@ import static android.os.Build.VERSION_CODES.O;
 
 public  class BookingPage extends AppCompatActivity {
         private Spinner spinner;
-        EditText mAddress, mBookD, mServicesD, mServicesT, mOther;
+        EditText mAddress, mBookD, mServicesD, mServicesT, mOther,mServices;
         Button Mbook;
         FirebaseAuth fAuth;
         FirebaseDatabase rootNode;
         DatabaseReference reference;
-        String userID, Address, Book, ServicesD, ServicesT,Other;
-        int maxid = 0;
-        Booking member;
+        String userID, Address, Book, ServicesD, ServicesT,Other,Services;
+
+
 
       
 
@@ -53,79 +53,27 @@ public  class BookingPage extends AppCompatActivity {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.booking);
 
-                spinner = findViewById(R.id.spinner2);
-                Mbook = findViewById(R.id.Book_button);
-                reference = rootNode.getInstance().getReference().child("Booking");
-
-                List<String> Category = new ArrayList<>();
-                Category.add("Choose services");
-                Category.add("Car cleaning services");
-                Category.add("Motorcycle cleaning services");
-                Category.add("Garden cleaning services");
-                Category.add("House cleaning services");
-
-                ArrayAdapter<String> dataAdapter;
-                dataAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, Category);
-
-                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-
-                spinner.setAdapter(dataAdapter);
-
-                spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                                if  (adapterView.getItemAtPosition(i).equals("Choose services")){
-                                }
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> adapterView) {
-
-                        }
-                });
-
-
-
                 mAddress = findViewById(R.id.booking_address_field);
                 mBookD = findViewById(R.id.Booking_date);
                 mServicesD = findViewById(R.id.services_date);
                 mServicesT = findViewById(R.id.services_time_text);
                 mOther = findViewById(R.id.extra_info_text);
-
-
+                Mbook = findViewById(R.id.Book_button);
+                mServices = findViewById(R.id.Services_text);
 
                 fAuth = FirebaseAuth.getInstance();
 
 
-                reference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-
-                                if(dataSnapshot.exists()) {
-                                        maxid = (int) dataSnapshot.getChildrenCount();
-                                }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                });
                 Mbook.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-
-                                member.setSpinner(spinner.getSelectedItem().toString());
-                                Toast.makeText(BookingPage.this, "Value stored Successfuly",Toast.LENGTH_LONG).show();
-
 
                                 Address = mAddress.getText().toString().trim();
                                 Book = mBookD.getText().toString().trim();
                                 ServicesD = mServicesD.getText().toString().trim();
                                 ServicesT = mServicesT.getText().toString().trim();
                                 Other = mOther.getText().toString().trim();
+                                Services = mServices.getText().toString().trim();
 
 
                                 if (TextUtils.isEmpty((Address))) {
@@ -150,9 +98,9 @@ public  class BookingPage extends AppCompatActivity {
                                         reference.child("servicesDate").setValue(ServicesD);
                                         reference.child("ServicesTime").setValue(ServicesT);
                                         reference.child("Other Information").setValue(Other);
-                                        reference.child(String.valueOf(maxid+1)).setValue(member);
+                                        reference.child("Services").setValue(Services);
                                 }
-                                Booking booking = new Booking(Address, Book, ServicesD, ServicesT, Other,spinner);
+                                Booking booking = new Booking(Address, Book, ServicesD, ServicesT, Other,Services);
                         }
                 });
 

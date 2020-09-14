@@ -10,25 +10,25 @@ public class Booking {
     private String ServicesDate;
     private String ServicesTime;
     private String Other;
-    private String Spinner;
+    private String Services;
 
-    public Booking(String address, String book, String servicesD, String servicesT, String other, android.widget.Spinner spinner){
+    public Booking(){
 
     }
-    public Booking(String address, String BookingDate, String servicesDate, String servicesTime, String other, String spinner) {
+    public Booking(String address, String BookingDate, String servicesDate, String servicesTime, String other, String services) {
         this.address = address;
         this.BookingDate = BookingDate;
         ServicesDate = servicesDate;
         ServicesTime = servicesTime;
         Other = other;
-        Spinner = spinner;
+        Services = services;
+
 
     }
 
+    public String getServices() {return Services;}
 
-    public String getSpinner() {return Spinner;}
-
-    public void setSpinner(String spinner) {Spinner = spinner;}
+    public void setServices(String services) {Services = services;}
 
     public String getAddress() {
         return address;
