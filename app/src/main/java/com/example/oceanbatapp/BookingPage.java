@@ -150,7 +150,7 @@ public  class BookingPage extends AppCompatActivity {
                                         reference.child("servicesDate").setValue(ServicesD);
                                         reference.child("ServicesTime").setValue(ServicesT);
                                         reference.child("Other Information").setValue(Other);
-                                        reference.child(String.valueOf(maxid+1)).setValue(spinner);
+                                        reference.child(String.valueOf(maxid+1)).setValue(member);
                                 }
                                 Booking booking = new Booking(Address, Book, ServicesD, ServicesT, Other,spinner);
                         }
