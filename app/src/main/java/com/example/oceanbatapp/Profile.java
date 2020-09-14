@@ -31,11 +31,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-//import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -53,7 +53,6 @@ public class Profile extends AppCompatActivity {
      FirebaseStorage storage;
      StorageReference storageReference;
      FirebaseAuth fAuth;
-     //FirebaseFirestore fStore;
 
 
 
@@ -66,10 +65,13 @@ public class Profile extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
+
+
 
 
         mName = findViewById(R.id.profileName);
@@ -79,14 +81,24 @@ public class Profile extends AppCompatActivity {
         mProfilePic = findViewById(R.id.profilePic);
         mUpdateBtn = findViewById(R.id.updateBtn);
 
-        storage = FirebaseStorage.getInstance();
-        storageReference = storage.getReference();
-
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid();
         databaseReference = FirebaseDatabase.getInstance().getReference("account");
         fAuth = FirebaseAuth.getInstance();
-       // fStore = FirebaseFirestore.getInstance();
+
+        storage = FirebaseStorage.getInstance();
+        storageReference = storage.getReference();
+        storageReference = FirebaseStorage.getInstance().getReference();
+
+        StorageReference profileRef = storageReference.child("user/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
+        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(mProfilePic);
+            }
+        });
+
+
 
 
 
@@ -116,8 +128,6 @@ public class Profile extends AppCompatActivity {
                 mEmail.setText(email);
                 mBirthDate.setText(Birthday);
                 mPhoneNo.setText(phoneNo);
-
-
 
 
 
@@ -178,12 +188,40 @@ public class Profile extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==1 && resultCode==RESULT_OK && data!=null && data.getData()!=null ){
             imageUri = data.getData();
-            mProfilePic.setImageURI(imageUri);
-            uploadPicture();
+
+            //mProfilePic.setImageURI(imageUri);
+
+            //uploadPicture();
+
+            uploadPictureToFirebase(imageUri);
         }
     }
 
-    private void uploadPicture() {
+    private void uploadPictureToFirebase(Uri imageUri) {
+        // upload image to firebase storage
+        final StorageReference fileRef = storageReference.child("user/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
+        fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                //Toast.makeText(Profile.this, "Image Uploaded", Toast.LENGTH_SHORT).show();
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Picasso.get().load(uri).into(mProfilePic);
+                    }
+                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(Profile.this, "Failed.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+
+    /*private void uploadPicture() {
         final ProgressDialog pd = new ProgressDialog(this);
         pd.setTitle("Uploading Image...");
         pd.show();
@@ -216,4 +254,6 @@ public class Profile extends AppCompatActivity {
 
 
     }
+
+     */
 }
