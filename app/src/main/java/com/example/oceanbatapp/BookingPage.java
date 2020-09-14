@@ -20,10 +20,11 @@ public  class BookingPage extends AppCompatActivity {
 
 
         FirebaseDatabase database;
-        DatabaseReference ref;
+        DatabaseReference ref,BK;
         EditText mAddress, mBookD, mServicesD, mServicesT, mOther,mServices;
         Button Mbooking;
         int maxid=0;
+        private String bk;
 
 
         Booking booking;
@@ -73,7 +74,7 @@ public  class BookingPage extends AppCompatActivity {
                                 booking.setServicesTime(mServicesT.getText().toString());
                                 booking.setOther(mOther.getText().toString());
 
-                                ref.child(String.valueOf("BK"+(maxid+1))).setValue(booking);
+                                ref.child(String.valueOf(maxid+1)).setValue(booking);
                         }
                 });
         }
