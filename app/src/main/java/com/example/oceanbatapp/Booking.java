@@ -10,7 +10,7 @@ public class Booking {
     private String Other;
     private String Services;
 
-public Booking(){}
+    public Booking(){}
 
     public String getAddress() {
         return address;
