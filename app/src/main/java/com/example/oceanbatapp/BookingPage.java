@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -27,13 +28,16 @@ import java.util.List;
 public  class BookingPage extends AppCompatActivity {
 
 
-        FirebaseAuth mFirebaseAuth;
+
         FirebaseDatabase database;
         DatabaseReference ref,BK;
         EditText mAddress, mBookD, mServicesD, mServicesT, mOther,mServices;
         Button Mbooking;
         int maxid=0;
         Booking booking;
+        String userID;
+        FirebaseAuth fAuth;
+
 
         private Spinner spinner;
 
@@ -80,10 +84,12 @@ public  class BookingPage extends AppCompatActivity {
                 mServicesT = findViewById(R.id.services_time_text);
                 mOther = findViewById(R.id.extra_info_text);
 
+                fAuth = FirebaseAuth.getInstance();
+
                 Mbooking = findViewById(R.id.Book_button);
 
                 booking = new Booking();
-                ref = database.getInstance().getReference().child("account").child("Booking List");
+               // ref = database.getInstance().getReference().child("account").child("Booking List");
 
                 ref.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -107,6 +113,9 @@ public  class BookingPage extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
 
+                                userID = fAuth.getCurrentUser().getUid();
+                                database = FirebaseDatabase.getInstance();
+                                ref = database.getReference("account").child(userID).child("Booking Detail");
 
                                 booking.setSpinner(spinner.getSelectedItem().toString());
                               //  booking.setServices(mServices.getText().toString());
