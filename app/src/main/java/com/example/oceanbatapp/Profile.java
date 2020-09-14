@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,6 +28,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Profile extends AppCompatActivity {
@@ -109,6 +111,23 @@ public class Profile extends AppCompatActivity {
         mUpdateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                email = mEmail.getText().toString();
+                Username = mName.getText().toString();
+                Birthday =  mBirthDate.getText().toString();
+                phoneNo = mPhoneNo.getText().toString();
+
+                HashMap hashMap= new HashMap();
+                hashMap.put("Username",Username);
+                hashMap.put("email",email);
+                hashMap.put("Birthday",Birthday);
+                hashMap.put("phoneNo",phoneNo);
+
+                databaseReference.child("account").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(Profile.this, "Your Data is Successfully Updated", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
             }
         });
