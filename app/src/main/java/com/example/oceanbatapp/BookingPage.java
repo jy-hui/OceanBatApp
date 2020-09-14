@@ -54,7 +54,6 @@ public  class BookingPage extends AppCompatActivity {
                 setContentView(R.layout.booking);
 
                 spinner = findViewById(R.id.spinner2);
-                member = new Booking();
                 Mbook = findViewById(R.id.Book_button);
                 reference = rootNode.getInstance().getReference().child("Booking");
 
@@ -151,7 +150,7 @@ public  class BookingPage extends AppCompatActivity {
                                         reference.child("servicesDate").setValue(ServicesD);
                                         reference.child("ServicesTime").setValue(ServicesT);
                                         reference.child("Other Information").setValue(Other);
-                                        reference.child(String.valueOf(maxid+1)).setValue(member);
+                                        reference.child(String.valueOf(maxid+1)).setValue(spinner);
                                 }
                                 Booking booking = new Booking(Address, Book, ServicesD, ServicesT, Other,spinner);
                         }
