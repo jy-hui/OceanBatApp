@@ -56,6 +56,7 @@ public  class BookingPage extends AppCompatActivity {
                 spinner = findViewById(R.id.spinner2);
                 member = new Booking();
                 Mbook = findViewById(R.id.Book_button);
+                reference = rootNode.getInstance().getReference().child("Booking");
 
                 List<String> Category = new ArrayList<>();
                 Category.add("Choose services");
