@@ -48,13 +48,20 @@ public class Home extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View view) {
+        String servicesName = "";
+
+
         switch (view.getId()){
             case R.id.button_detail_car: {
                 Intent intent = new Intent(Home.this,DetailCar.class);
                 startActivity(intent);
                 break;
             }
-            case R.id.button_book_car:
+            case R.id.button_book_car:{
+                Intent intent = new Intent(Home.this,BookingPage.class);
+                intent.putExtra(getString(R.string.text_car), servicesName);
+                break;
+            }
             case R.id.button_book_motor:
             case R.id.button_book_house:
             case R.id.button_book_garden:{
@@ -78,5 +85,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener
                 break;
             }
         }
+
+
     }
 }

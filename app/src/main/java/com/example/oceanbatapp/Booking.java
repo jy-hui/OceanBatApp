@@ -8,9 +8,15 @@ public class Booking {
     private String ServicesDate;
     private String ServicesTime;
     private String Other;
-    private String Services;
+    private String spinner;
+   // private String Services;
 
-    public Booking(){}
+    public Booking() {
+    }
+
+    public String getSpinner() {return spinner; }
+
+    public void setSpinner(String spinner) {this.spinner = spinner;}
 
     public String getAddress() {
         return address;
@@ -52,11 +58,11 @@ public class Booking {
         Other = other;
     }
 
-    public String getServices() {
-        return Services;
-    }
+   // public String getServices() {
+    //    return Services;
+    //}
 
-    public void setServices(String services) {
-        Services = services;
-    }
+   // public void setServices(String services) {
+       // Services = services;
+  //  }
 }
