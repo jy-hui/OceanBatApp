@@ -122,6 +122,8 @@ public  class BookingPage extends AppCompatActivity {
                                 database = FirebaseDatabase.getInstance();
                                 ref = database.getReference("account").child(userID).child("Booking List");
 
+                                ref.child(String.valueOf(maxid + 1)).setValue(booking);
+
                                 booking.setSpinner(spinner.getSelectedItem().toString());
                                 //  booking.setServices(mServices.getText().toString());
                                 booking.setAddress(mAddress.getText().toString());
@@ -130,7 +132,7 @@ public  class BookingPage extends AppCompatActivity {
                                 booking.setServicesTime(mServicesT.getText().toString());
                                 booking.setOther(mOther.getText().toString());
 
-                                ref.child(String.valueOf(maxid + 1)).setValue(booking);
+
                                 Toast.makeText(BookingPage.this, "Your services have been add.", Toast.LENGTH_SHORT).show();
 
                         }
