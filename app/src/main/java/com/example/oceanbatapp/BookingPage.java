@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -29,14 +30,13 @@ import java.util.List;
 public  class BookingPage extends AppCompatActivity {
 
 
-
+        String userID, address,bookD,servicesD, mservicesT,moTher;
         FirebaseDatabase database;
         DatabaseReference ref,BK;
         EditText mAddress, mBookD, mServicesD, mServicesT, mOther,mServices;
         Button Mbooking;
         int maxid=0;
         Booking booking;
-        String userID, t;
         FirebaseAuth fAuth;
 
         TextView receiver;
@@ -127,28 +127,51 @@ public  class BookingPage extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
 
-
-                                userID = fAuth.getCurrentUser().getUid();
-                                database = FirebaseDatabase.getInstance();
-                                ref = database.getReference("account").child(userID).child("Booking List");
-
-                                ref.child(String.valueOf(maxid + 1)).setValue(booking);
-
-                                booking.setReceiver(receiver.toString());
-                                //  booking.setServices(mServices.getText().toString());
-                                booking.setAddress(mAddress.getText().toString());
-                                booking.setBookingDate(mBookD.getText().toString());
-                                booking.setServicesDate(mServicesD.getText().toString());
-                                booking.setServicesTime(mServicesT.getText().toString());
-                                booking.setOther(mOther.getText().toString());
+                                address = mAddress.getText().toString().trim();
+                                bookD = mBookD.getText().toString().trim();
+                                servicesD = mServicesD.getText().toString().trim();
+                                mservicesT = mServicesT.getText().toString().trim();
 
 
+                                if(TextUtils.isEmpty((address))) {
+                                        mAddress.setError("Address is required");
+                                        return;
+                                }
+                                if(TextUtils.isEmpty((bookD))) {
+                                        mBookD.setError("Book date is required");
+                                        return;
+                                }
+                                if(TextUtils.isEmpty((servicesD))) {
+                                        mServicesD.setError("Services date is required");
+                                        return;
+                                }
+                                if(TextUtils.isEmpty((mservicesT))) {
+                                        mServicesT.setError("Services time is required");
+                                        return;
+                                }
 
-                                Toast.makeText(BookingPage.this, "Your services have been add.", Toast.LENGTH_SHORT).show();
+
+                                else {
+
+                                        userID = fAuth.getCurrentUser().getUid();
+                                        database = FirebaseDatabase.getInstance();
+                                        ref = database.getReference("account").child(userID + 1).child("Booking List");
+
+                                        ref.child(String.valueOf(maxid + 1)).setValue(booking);
+
+                                        booking.setReceiver(receiver.toString());
+                                        //  booking.setServices(mServices.getText().toString());
+                                        booking.setAddress(mAddress.getText().toString());
+                                        booking.setBookingDate(mBookD.getText().toString());
+                                        booking.setServicesDate(mServicesD.getText().toString());
+                                        booking.setServicesTime(mServicesT.getText().toString());
+                                        booking.setOther(mOther.getText().toString());
+
+
+                                        Toast.makeText(BookingPage.this, "Your services have been add.", Toast.LENGTH_SHORT).show();
+                                }
 
                         }
                 });
         }
-
-
 }
