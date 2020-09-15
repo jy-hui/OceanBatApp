@@ -39,13 +39,13 @@ public  class BookingPage extends AppCompatActivity {
         String userID;
         FirebaseAuth fAuth;
 
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
 
-        String servicesName;
+        //String servicesName;
 
-        String servicesType = intent.getStringExtra(servicesName);
+        //String servicesType = intent.getStringExtra(servicesName);
 
-        TextView receiver = (TextView) findViewById(R.id.services_type_name_text);
+        //TextView receiver = (TextView) findViewById(R.id.services_type_name_text);
 
         private Spinner spinner;
 
@@ -63,7 +63,7 @@ public  class BookingPage extends AppCompatActivity {
                 Category.add("House services Cleaning");
                 Category.add("Garden services Cleaning");
 
-                receiver.setText(servicesType);
+                //receiver.setText(servicesType);
 
 
                 final ArrayAdapter<String> dataAdpter;
@@ -99,7 +99,7 @@ public  class BookingPage extends AppCompatActivity {
                 Mbooking = findViewById(R.id.Book_button);
 
                 booking = new Booking();
-               // ref = database.getInstance().getReference().child("account").child("Booking List");
+                ref = database.getInstance().getReference().child("account").child("Booking List");
 
                 ref.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -123,19 +123,20 @@ public  class BookingPage extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
 
+
                                 userID = fAuth.getCurrentUser().getUid();
                                 database = FirebaseDatabase.getInstance();
-                                ref = database.getReference("account").child(userID).child("Booking Detail");
+                                ref = database.getReference("account").child(userID).child("Booking List");
 
                                 booking.setSpinner(spinner.getSelectedItem().toString());
-                              //  booking.setServices(mServices.getText().toString());
+                                //  booking.setServices(mServices.getText().toString());
                                 booking.setAddress(mAddress.getText().toString());
                                 booking.setBookingDate(mBookD.getText().toString());
                                 booking.setServicesDate(mServicesD.getText().toString());
                                 booking.setServicesTime(mServicesT.getText().toString());
                                 booking.setOther(mOther.getText().toString());
 
-                                ref.child(String.valueOf(maxid+1)).setValue(booking);
+                                ref.child(String.valueOf(maxid + 1)).setValue(booking);
                                 Toast.makeText(BookingPage.this, "Your services have been add.", Toast.LENGTH_SHORT).show();
 
                         }
