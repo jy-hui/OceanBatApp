@@ -39,7 +39,7 @@ public  class BookingPage extends AppCompatActivity {
         String userID;
         FirebaseAuth fAuth;
 
-        TextView receiver = (TextView) findViewById(R.id.services_type_name_text);
+        TextView receiver;
 
         private Spinner spinner;
 
@@ -51,14 +51,13 @@ public  class BookingPage extends AppCompatActivity {
 
                 spinner = findViewById(R.id.spinner_text);
 
-                List<String> Category = new ArrayList<>();
+                receiver = (TextView) findViewById(R.id.services_type_name_text);
+
+                final List<String> Category = new ArrayList<>();
                 Category.add("Car services Cleaning");
                 Category.add("Motorcycle services Cleaning");
                 Category.add("House services Cleaning");
                 Category.add("Garden services Cleaning");
-
-                //receiver.setText(servicesType);
-
 
                 final ArrayAdapter<String> dataAdpter;
                 dataAdpter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,Category);
@@ -70,23 +69,34 @@ public  class BookingPage extends AppCompatActivity {
                 spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                                if(adapterView.getItemAtPosition(i).equals("Choose services")){}
-                                else{
-                                        ///
+                                if(adapterView.getItemAtPosition(i).equals("Choose services")){
+                                /*String passS = getIntent().getStringExtra("pass");
+                                assert passS != null;
+                                if((passS.equals("car"))){
+                                        spinner.setSelection(dataAdpter);
                                 }
+                                else if((passS.equals("motor"))){
+                                        //receiver = setText(passS);
+                                        adapterView.getItemAtPosition(i).equals("Motorcycle services Cleaning");
+                                }*/
                         }
+                         else{
+
+                         }
+                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
 
                         }
                 });
-               // mServices = findViewById(R.id.Services_text);
+                // mServices = findViewById(R.id.Services_text);
                 mAddress = findViewById(R.id.booking_address_field);
                 mBookD = findViewById(R.id.Booking_date);
                 mServicesD = findViewById(R.id.services_date);
                 mServicesT = findViewById(R.id.services_time_text);
                 mOther = findViewById(R.id.extra_info_text);
+
 
                 fAuth = FirebaseAuth.getInstance();
 
@@ -116,7 +126,6 @@ public  class BookingPage extends AppCompatActivity {
                 Mbooking.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-
 
                                 userID = fAuth.getCurrentUser().getUid();
                                 database = FirebaseDatabase.getInstance();

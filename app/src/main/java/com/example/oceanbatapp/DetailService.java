@@ -3,6 +3,8 @@ package com.example.oceanbatapp;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +37,7 @@ public class DetailService extends AppCompatActivity {
     TextView detail, text;
     ImageView image;
     String t,d,im;
+    Button back, book;
     Uri imageUri;
     FirebaseAuth fAuth;
     DatabaseReference reference;
@@ -49,6 +52,9 @@ public class DetailService extends AppCompatActivity {
         text = (TextView) findViewById(R.id.text_service);
         detail = (TextView) findViewById(R.id.text_detail);
         image = (ImageView) findViewById(R.id.image_service);
+
+        back = findViewById(R.id.button_back);
+        book = findViewById(R.id.button_service_book);
 
         reference = FirebaseDatabase.getInstance().getReference("Service");
         storage = FirebaseStorage.getInstance();
@@ -118,6 +124,34 @@ public class DetailService extends AppCompatActivity {
                 Toast.makeText(DetailService.this, "Can't Get data", Toast.LENGTH_SHORT).show();
             }
         });
+
+        back.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailService.this, Home.class);
+                startActivity(intent);
+            }
+        });
+
+        book.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                String passS = getIntent().getStringExtra("pass");
+                assert passS != null;
+                if (passS.equals("car")) {
+                    Intent intent = new Intent(DetailService.this, BookingPage.class).putExtra("pass", "car");
+                    startActivity(intent);
+                } else if (passS.equals("motor")) {
+                    Intent intent = new Intent(DetailService.this, BookingPage.class).putExtra("pass", "motor");
+                    startActivity(intent);
+                } else if (passS.equals("house")) {
+                    Intent intent = new Intent(DetailService.this, BookingPage.class).putExtra("pass", "house");
+                    startActivity(intent);
+                } else if (passS.equals("garden")) {
+                    Intent intent = new Intent(DetailService.this, BookingPage.class).putExtra("pass", "garden");
+                    startActivity(intent);
+                }
+            }
+        });
+
     }
 }
 
