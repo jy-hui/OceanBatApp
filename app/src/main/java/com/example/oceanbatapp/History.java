@@ -14,6 +14,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class History extends AppCompatActivity {
 
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    DatabaseReference mGetReference = mDatabase.getReference("account");
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
