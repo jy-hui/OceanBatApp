@@ -144,7 +144,7 @@ public  class BookingPage extends AppCompatActivity {
 
                                 ref.child(String.valueOf(maxid + 1)).setValue(booking);
 
-                                booking.setSpinner(receiver.getText().toString());
+                                booking.setSpinner(spinner.getSelectedItem().toString());
                                 //  booking.setServices(mServices.getText().toString());
                                 booking.setAddress(mAddress.getText().toString());
                                 booking.setBookingDate(mBookD.getText().toString());

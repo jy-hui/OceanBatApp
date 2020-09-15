@@ -9,6 +9,7 @@ public class Booking {
     private String ServicesTime;
     private String Other;
     private String spinner;
+    private String receiver;
    // private String Services;
 
     public Booking() {
@@ -58,7 +59,15 @@ public class Booking {
         Other = other;
     }
 
-   // public String getServices() {
+    public String getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
+    }
+
+    // public String getServices() {
     //    return Services;
     //}
 
