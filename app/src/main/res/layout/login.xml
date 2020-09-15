@@ -1,104 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityLogin"
-    android:orientation="vertical"
-    android:background="#fff"
-    android:padding="20dp">
-
-    <ImageView
-        android:id="@+id/logo_image"
-        android:layout_width="wrap_content"
-        android:layout_height="110dp"
-        android:src="@drawable/logo_ocean_bat"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome Back To Ocean Bat !!!"
-        android:textSize="40sp"
-        android:gravity="center"
-        android:transitionName="logo_text"
-        android:fontFamily="@font/bangers"
-        android:textColor="@color/Black"/>
+    tools:context=".ActivityLogin">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="vertical">
+        android:background="#fff"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:src="@drawable/logo_ocean_bat"/>
 
         <TextView
-            android:id="@+id/Login"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome Back To Ocean Bat !!!"
+            android:textSize="40sp"
             android:gravity="center"
-            android:text="@string/LOGIN"
-            android:textSize="25sp"
+            android:transitionName="logo_text"
+            android:fontFamily="@font/bangers"
             android:textColor="@color/Black"/>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Email"
-            android:textColor="@color/Black"/>
-
-        <EditText
-            android:id="@+id/text_input_email"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            app:errorEnabled="true"
-            app:passwordToggleEnabled="true" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Password"
-            android:textColor="@color/Black"/>
+            <TextView
+                android:id="@+id/Login"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/LOGIN"
+                android:textSize="25sp"
+                android:textColor="@color/Black"/>
 
-        <EditText
-            android:id="@+id/text_input_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:onClick="confirmInput"
-            tools:ignore="OnClick" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Email"
+                android:textColor="@color/Black"/>
+
+            <EditText
+                android:id="@+id/text_input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Password"
+                android:textColor="@color/Black"/>
+
+            <EditText
+                android:id="@+id/text_input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:onClick="confirmInput"
+                tools:ignore="OnClick" />
 
 
-        <Button
-            android:id="@+id/Login_button"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="@string/LOGIN"
-            android:background="@color/LightSeaGreen"
-            android:textColor="@color/White"/>
+            <Button
+                android:id="@+id/Login_button"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/LOGIN"
+                android:background="@color/LightSeaGreen"
+                android:textColor="@color/White"/>
 
-        <Button
-            android:id="@+id/button_SignUp"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="New User? SIGN UP Now"
-            android:background="@color/White"
-            android:textColor="@color/Black"/>
+            <Button
+                android:id="@+id/button_SignUp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="New User? SIGN UP Now"
+                android:background="@color/White"
+                android:textColor="@color/Black"/>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:visibility="invisible" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="145dp"
-            android:visibility="invisible" />
+        </LinearLayout>
+
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
+
