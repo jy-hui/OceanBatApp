@@ -24,6 +24,15 @@
     <string name="settings_text">Settings</string>
     <string name="log_out_text">Log Out</string>
 
+
+    //services text
+
+    <string name="booking_car_text">Car services Cleaning</string>
+    <string name="booking_motor_text">Motorcycle services Cleaning</string>
+    <string name="booking_house_text">House services Cleaning</string>
+    <string name="booking_garden_text">Garden services Cleaning</string>
+
+
     //
     <string name="Login">login</string>
     <string name="signUp">SIGN UP</string>
