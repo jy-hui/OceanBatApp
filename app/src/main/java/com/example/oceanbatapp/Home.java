@@ -1,20 +1,47 @@
 package com.example.oceanbatapp;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Home extends AppCompatActivity implements View.OnClickListener
-{
+public class Home extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.home);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+
+        Menu menu = navigationView.getMenu();
+        menu.findItem(R.id.nav_logout).setVisible(false);
+        menu.findItem(R.id.nav_profile).setVisible(false);
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_home);
 
 
         final Button carDetail = findViewById(R.id.button_detail_car);
@@ -36,8 +63,6 @@ public class Home extends AppCompatActivity implements View.OnClickListener
         final Button gardenBook = findViewById(R.id.button_book_garden);
         gardenDetail.setOnClickListener(this);
         gardenBook.setOnClickListener(this);
-
-
 
     }
 
@@ -88,7 +113,50 @@ public class Home extends AppCompatActivity implements View.OnClickListener
                 break;
             }
         }
+    }
+    public void onBackPressed(){
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }else{
+            super.onBackPressed();
+        }
+    }
 
-
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.nav_home: {
+                Intent intent = new Intent(Home.this,Home.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.nav_profile: {
+                Intent intent = new Intent(Home.this,Profile.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.nav_favourite: {
+                //Intent intent = new Intent(Home.this,Favourite.class)
+                //startActivity(intent);
+                break;
+            }
+            case R.id.nav_history: {
+                Intent intent = new Intent(Home.this,History.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.nav_setting: {
+                //Intent intent = new Intent(Home.this,Setting.class)
+                //startActivity(intent);
+                break;
+            }
+            case R.id.nav_logout: {
+                FirebaseAuth.getInstance().signOut(); //logout
+                startActivity(new Intent(getApplicationContext(), FirstPage.class));
+                break;
+            }
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
     }
 }
