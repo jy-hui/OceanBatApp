@@ -39,13 +39,7 @@ public  class BookingPage extends AppCompatActivity {
         String userID;
         FirebaseAuth fAuth;
 
-        //Intent intent = getIntent();
-
-        //String servicesName;
-
-        //String servicesType = intent.getStringExtra(servicesName);
-
-        //TextView receiver = (TextView) findViewById(R.id.services_type_name_text);
+        TextView receiver = (TextView) findViewById(R.id.services_type_name_text);
 
         private Spinner spinner;
 
