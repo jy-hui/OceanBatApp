@@ -106,7 +106,6 @@ public class SignUp extends AppCompatActivity {
                 Username = mFullName.getText().toString().trim();
                 Birthday =  mDisplayDate.getText().toString().trim();
                 phoneNo = mPhoneNo.getText().toString().trim();
-                String Repassword = mRepassword.getText().toString().trim();
 
                 if(TextUtils.isEmpty((Username))) {
                     mFullName.setError("Name is required");
@@ -119,9 +118,6 @@ public class SignUp extends AppCompatActivity {
                     mEmail.setError("Email is Required");
                     return;
                 }else if (TextUtils.isEmpty(password)) {
-                    mPassword.setError("Password is Required");
-                    return;
-                }else if (TextUtils.isEmpty(Repassword)) {
                     mPassword.setError("Password is Required");
                     return;
                 }else if (password.length() < 6) {
