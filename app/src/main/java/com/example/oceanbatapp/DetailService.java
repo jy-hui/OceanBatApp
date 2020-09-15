@@ -25,12 +25,11 @@ import com.squareup.picasso.Picasso;
 import java.net.CookieHandler;
 
 public class DetailService extends AppCompatActivity {
-    //@Override
 
-    /*FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
     DatabaseReference mGetReference = mDatabase.getReference("Service");
 
-    DatabaseReference second = mGetReference.child("Motor");*/
+    DatabaseReference second = mGetReference.child("Motor");
     FirebaseAuth auth;
 
     TextView detail, text;
