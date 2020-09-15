@@ -39,7 +39,7 @@ public  class BookingPage extends AppCompatActivity {
         String userID;
         FirebaseAuth fAuth;
 
-        TextView receiver = (TextView) findViewById(R.id.services_type_name_text);
+        //TextView receiver = (TextView) findViewById(R.id.services_type_name_text);
 
         private Spinner spinner;
 
@@ -57,7 +57,7 @@ public  class BookingPage extends AppCompatActivity {
                 Category.add("House services Cleaning");
                 Category.add("Garden services Cleaning");
 
-                //receiver.setText(servicesType);
+                //receiver.setText(R.string.booking_car_text);
 
 
                 final ArrayAdapter<String> dataAdpter;
@@ -89,17 +89,19 @@ public  class BookingPage extends AppCompatActivity {
                 mOther = findViewById(R.id.extra_info_text);
 
                 fAuth = FirebaseAuth.getInstance();
+                userID = fAuth.getCurrentUser().getUid();
 
                 Mbooking = findViewById(R.id.Book_button);
 
                 booking = new Booking();
-                ref = database.getInstance().getReference().child("account").child("Booking List");
+                ref = database.getInstance().getReference().child("account").child(userID).child("Booking List");
 
                 ref.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.exists()){
                                         maxid = (int) dataSnapshot.getChildrenCount();
+                                        Toast.makeText(BookingPage.this, String.valueOf(maxid), Toast.LENGTH_SHORT).show();
                                 }else {
                                         ///
                                 }
