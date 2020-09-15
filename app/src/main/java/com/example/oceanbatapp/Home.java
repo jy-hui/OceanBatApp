@@ -129,7 +129,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener, Nav
                 break;
             }
             case R.id.nav_profile: {
-                Intent intent = new Intent(Home.this,Profile.class);
+                Intent intent = new Intent(Home.this,ShowProfile.class);
                 startActivity(intent);
                 break;
             }
