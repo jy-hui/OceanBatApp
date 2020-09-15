@@ -31,12 +31,11 @@ public class DetailService extends AppCompatActivity {
     FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
     DatabaseReference mGetReference = mDatabase.getReference("Service");
 
-    DatabaseReference second = mGetReference.child("Motor");
     FirebaseAuth auth;
 
     TextView detail, text;
     ImageView image;
-    String t,d,im;
+    String t,d;
     Button back, book;
     Uri imageUri;
     FirebaseAuth fAuth;
@@ -132,7 +131,7 @@ public class DetailService extends AppCompatActivity {
             }
         });
 
-        book.setOnClickListener(new View.OnClickListener(){
+        /*book.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 String passS = getIntent().getStringExtra("pass");
                 assert passS != null;
@@ -150,7 +149,7 @@ public class DetailService extends AppCompatActivity {
                     startActivity(intent);
                 }
             }
-        });
+        });*/
 
     }
 }
