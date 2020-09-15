@@ -139,11 +139,6 @@ public class Home extends AppCompatActivity implements View.OnClickListener, Nav
                 startActivity(intent);
                 break;
             }
-            case R.id.nav_history: {
-                Intent intent = new Intent(Home.this,History.class);
-                startActivity(intent);
-                break;
-            }
             case R.id.nav_logout: {
                 FirebaseAuth.getInstance().signOut(); //logout
                 startActivity(new Intent(getApplicationContext(), FirstPage.class));
