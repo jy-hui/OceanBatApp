@@ -137,16 +137,16 @@ public class DetailService extends AppCompatActivity {
                 String passS = getIntent().getStringExtra("pass");
                 assert passS != null;
                 if (passS.equals("car")) {
-                    Intent intent = new Intent(DetailService.this, BookingPage.class).putExtra("pass", "car");
+                    Intent intent = new Intent(DetailService.this, BookingPage.class).putExtra("passB", "car");
                     startActivity(intent);
                 } else if (passS.equals("motor")) {
-                    Intent intent = new Intent(DetailService.this, BookingPage.class).putExtra("pass", "motor");
+                    Intent intent = new Intent(DetailService.this, BookingPage.class).putExtra("passB", "motor");
                     startActivity(intent);
                 } else if (passS.equals("house")) {
-                    Intent intent = new Intent(DetailService.this, BookingPage.class).putExtra("pass", "house");
+                    Intent intent = new Intent(DetailService.this, BookingPage.class).putExtra("passB", "house");
                     startActivity(intent);
                 } else if (passS.equals("garden")) {
-                    Intent intent = new Intent(DetailService.this, BookingPage.class).putExtra("pass", "garden");
+                    Intent intent = new Intent(DetailService.this, BookingPage.class).putExtra("passB", "garden");
                     startActivity(intent);
                 }
             }

@@ -36,7 +36,7 @@ public  class BookingPage extends AppCompatActivity {
         Button Mbooking;
         int maxid=0;
         Booking booking;
-        String userID;
+        String userID, t;
         FirebaseAuth fAuth;
 
         TextView receiver;
@@ -52,6 +52,22 @@ public  class BookingPage extends AppCompatActivity {
                 spinner = findViewById(R.id.spinner_text);
 
                 receiver = (TextView) findViewById(R.id.services_type_name_text);
+                String passS = getIntent().getStringExtra("pass");
+                assert passS != null;
+                switch (passS) {
+                        case "car":{
+                                receiver.setText(passS);
+                                break;}
+                        case "motor":{
+                                receiver.setText(passS);
+                                break;}
+                        case "house":{
+                                receiver.setText(passS);
+                                break;}
+                        case "garden":{
+                                receiver.setText(passS);
+                                break;}
+                }
 
                 final List<String> Category = new ArrayList<>();
                 Category.add("Car services Cleaning");
@@ -70,15 +86,6 @@ public  class BookingPage extends AppCompatActivity {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                 if(adapterView.getItemAtPosition(i).equals("Choose services")){
-                                /*String passS = getIntent().getStringExtra("pass");
-                                assert passS != null;
-                                if((passS.equals("car"))){
-                                        spinner.setSelection(dataAdpter);
-                                }
-                                else if((passS.equals("motor"))){
-                                        //receiver = setText(passS);
-                                        adapterView.getItemAtPosition(i).equals("Motorcycle services Cleaning");
-                                }*/
                         }
                          else{
 
