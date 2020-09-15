@@ -54,20 +54,9 @@ public  class BookingPage extends AppCompatActivity {
                 receiver = (TextView) findViewById(R.id.services_type_name_text);
                 String passS = getIntent().getStringExtra("pass");
                 assert passS != null;
-                switch (passS) {
-                        case "car":{
-                                receiver.setText(passS);
-                                break;}
-                        case "motor":{
-                                receiver.setText(passS);
-                                break;}
-                        case "house":{
-                                receiver.setText(passS);
-                                break;}
-                        case "garden":{
-                                receiver.setText(passS);
-                                break;}
-                }
+
+                receiver.setText(passS);
+
 
                 /*final List<String> Category = new ArrayList<>();
                 Category.add("Car services Cleaning");
@@ -145,7 +134,7 @@ public  class BookingPage extends AppCompatActivity {
 
                                 ref.child(String.valueOf(maxid + 1)).setValue(booking);
 
-                                booking.setSpinner(receiver.getText().toString());
+                                booking.setReceiver(receiver.toString());
                                 //  booking.setServices(mServices.getText().toString());
                                 booking.setAddress(mAddress.getText().toString());
                                 booking.setBookingDate(mBookD.getText().toString());
