@@ -135,19 +135,9 @@ public class Home extends AppCompatActivity implements View.OnClickListener, Nav
                 startActivity(intent);
                 break;
             }
-            case R.id.nav_favourite: {
-                //Intent intent = new Intent(Home.this,Favourite.class)
-                //startActivity(intent);
-                break;
-            }
             case R.id.nav_history: {
                 Intent intent = new Intent(Home.this,History.class);
                 startActivity(intent);
-                break;
-            }
-            case R.id.nav_setting: {
-                //Intent intent = new Intent(Home.this,Setting.class)
-                //startActivity(intent);
                 break;
             }
             case R.id.nav_logout: {
