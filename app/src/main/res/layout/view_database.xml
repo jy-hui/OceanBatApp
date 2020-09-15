@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="25dp"
-        android:text="User Information"
+        android:text="History"
         android:id="@+id/tvUserInfo"
         android:gravity="center_horizontal" />
 
