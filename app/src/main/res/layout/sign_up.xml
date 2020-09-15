@@ -134,21 +134,6 @@
                 android:hint="@string/Password"
                 android:inputType="textPassword" />
 
-            <TextView
-                android:id="@+id/rePassword_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/rePassword"
-                android:textColor="@color/Black"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/text_input_rePassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Confirm Password"
-                android:inputType="textPassword" />
 
             <Button
                 android:id="@+id/signUp_button"

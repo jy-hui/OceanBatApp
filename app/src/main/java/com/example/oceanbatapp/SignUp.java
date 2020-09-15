@@ -54,7 +54,6 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.sign_up);
 
         mDisplayDate = (TextView) findViewById(R.id.input_text_date);
-        mRepassword = findViewById(R.id.text_input_rePassword);
        // mBirthday = findViewById(R.id.input_text_date);
         mFullName = findViewById(R.id.text_input_name);
         mEmail = findViewById(R.id.text_input_email);

@@ -75,6 +75,9 @@ public  class BookingPage extends AppCompatActivity {
                 Category.add("House services Cleaning");
                 Category.add("Garden services Cleaning");
 
+                //receiver.setText(servicesType);
+
+
                 final ArrayAdapter<String> dataAdpter;
                 dataAdpter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,Category);
 
@@ -85,27 +88,26 @@ public  class BookingPage extends AppCompatActivity {
                 spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                                if(adapterView.getItemAtPosition(i).equals("Choose services")){
+                                if(adapterView.getItemAtPosition(i).equals("Choose services")){}
+                                else{
+                                        ///
+                                }
                         }
-                         else{
-
-                         }
-                         }
 
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
 
                         }
                 });
-                // mServices = findViewById(R.id.Services_text);
+               // mServices = findViewById(R.id.Services_text);
                 mAddress = findViewById(R.id.booking_address_field);
                 mBookD = findViewById(R.id.Booking_date);
                 mServicesD = findViewById(R.id.services_date);
                 mServicesT = findViewById(R.id.services_time_text);
                 mOther = findViewById(R.id.extra_info_text);
 
-
                 fAuth = FirebaseAuth.getInstance();
+                userID = fAuth.getCurrentUser().getUid();
 
                 Mbooking = findViewById(R.id.Book_button);
 
@@ -117,6 +119,7 @@ public  class BookingPage extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.exists()){
                                         maxid = (int) dataSnapshot.getChildrenCount();
+                                        Toast.makeText(BookingPage.this, String.valueOf(maxid), Toast.LENGTH_SHORT).show();
                                 }else {
                                         ///
                                 }
@@ -133,6 +136,7 @@ public  class BookingPage extends AppCompatActivity {
                 Mbooking.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
+
 
                                 userID = fAuth.getCurrentUser().getUid();
                                 database = FirebaseDatabase.getInstance();
