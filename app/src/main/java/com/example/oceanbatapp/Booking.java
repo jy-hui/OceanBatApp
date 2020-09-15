@@ -9,14 +9,15 @@ public class Booking {
     private String ServicesTime;
     private String Other;
     private String spinner;
+    private String receiver;
    // private String Services;
 
     public Booking() {
     }
 
-    public String getSpinner() {return spinner; }
+    public String getSpinner() {return receiver; }
 
-    public void setSpinner(String spinner) {this.spinner = spinner;}
+    public void setSpinner(String receiver) {this.receiver = receiver;}
 
     public String getAddress() {
         return address;

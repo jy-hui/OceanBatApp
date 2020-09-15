@@ -72,8 +72,6 @@ public class Home extends AppCompatActivity implements View.OnClickListener, Nav
 
     @Override
     public void onClick(View view) {
-        //String servicesName = "";
-        //String servicesType = "";
 
         switch (view.getId()){
             case R.id.button_detail_car: {

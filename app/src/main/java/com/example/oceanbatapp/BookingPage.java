@@ -41,7 +41,7 @@ public  class BookingPage extends AppCompatActivity {
 
         TextView receiver;
 
-        private Spinner spinner;
+        //private Spinner spinner;
 
         @SuppressLint("WrongViewCast")
         @Override
@@ -49,7 +49,7 @@ public  class BookingPage extends AppCompatActivity {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.booking);
 
-                spinner = findViewById(R.id.spinner_text);
+               // spinner = findViewById(R.id.spinner_text);
 
                 receiver = (TextView) findViewById(R.id.services_type_name_text);
                 String passS = getIntent().getStringExtra("pass");
@@ -69,7 +69,7 @@ public  class BookingPage extends AppCompatActivity {
                                 break;}
                 }
 
-                final List<String> Category = new ArrayList<>();
+                /*final List<String> Category = new ArrayList<>();
                 Category.add("Car services Cleaning");
                 Category.add("Motorcycle services Cleaning");
                 Category.add("House services Cleaning");
@@ -83,9 +83,9 @@ public  class BookingPage extends AppCompatActivity {
 
                 dataAdpter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-                spinner.setAdapter(dataAdpter);
+                spinner.setAdapter(dataAdpter);*/
 
-                spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                /*spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                 if(adapterView.getItemAtPosition(i).equals("Choose services")){}
@@ -98,13 +98,14 @@ public  class BookingPage extends AppCompatActivity {
                         public void onNothingSelected(AdapterView<?> adapterView) {
 
                         }
-                });
+                });*/
                // mServices = findViewById(R.id.Services_text);
                 mAddress = findViewById(R.id.booking_address_field);
                 mBookD = findViewById(R.id.Booking_date);
                 mServicesD = findViewById(R.id.services_date);
                 mServicesT = findViewById(R.id.services_time_text);
                 mOther = findViewById(R.id.extra_info_text);
+                receiver = findViewById(R.id.services_type_name_text);
 
                 fAuth = FirebaseAuth.getInstance();
                 userID = fAuth.getCurrentUser().getUid();
@@ -151,6 +152,7 @@ public  class BookingPage extends AppCompatActivity {
                                 booking.setServicesDate(mServicesD.getText().toString());
                                 booking.setServicesTime(mServicesT.getText().toString());
                                 booking.setOther(mOther.getText().toString());
+
 
 
                                 Toast.makeText(BookingPage.this, "Your services have been add.", Toast.LENGTH_SHORT).show();

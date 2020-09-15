@@ -18,27 +18,18 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-import java.net.CookieHandler;
 
 public class DetailService extends AppCompatActivity {
-
-    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
-    DatabaseReference mGetReference = mDatabase.getReference("Service");
-
-    FirebaseAuth auth;
 
     TextView detail, text;
     ImageView image;
     String t,d;
     Button back, book;
-    Uri imageUri;
-    FirebaseAuth fAuth;
     DatabaseReference reference;
     FirebaseStorage storage;
     StorageReference storageReference;
@@ -47,7 +38,6 @@ public class DetailService extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_service);
 
-        auth = FirebaseAuth.getInstance();
         text = (TextView) findViewById(R.id.text_service);
         detail = (TextView) findViewById(R.id.text_detail);
         image = (ImageView) findViewById(R.id.image_service);
