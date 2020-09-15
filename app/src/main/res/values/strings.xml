@@ -93,5 +93,7 @@
     \n\n Price: Basic Cleaning 10 to 20 according to garden size
     \n\n Full Cleaning including waxing : \n Below RM200</string>
 
-
+    //navigationBar
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
