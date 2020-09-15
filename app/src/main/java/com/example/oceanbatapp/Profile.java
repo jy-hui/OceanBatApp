@@ -164,10 +164,9 @@ public class Profile extends AppCompatActivity {
                 databaseReference.child(userID).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
                     @Override
                     public void onSuccess(Object o) {
-                        Toast.makeText(Profile.this, "Your Data is Successfully Updated", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Profile.this, "You successful to the edit page", Toast.LENGTH_SHORT).show();
                     }
                 });
-
                 Intent intent = new Intent(Profile.this,ShowProfile.class);
                 startActivity(intent);
 

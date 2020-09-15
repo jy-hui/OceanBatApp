@@ -36,10 +36,10 @@ public  class BookingPage extends AppCompatActivity {
         Button Mbooking;
         int maxid=0;
         Booking booking;
-        String userID;
+        String userID, t;
         FirebaseAuth fAuth;
 
-        //TextView receiver = (TextView) findViewById(R.id.services_type_name_text);
+        TextView receiver;
 
         private Spinner spinner;
 
@@ -51,13 +51,31 @@ public  class BookingPage extends AppCompatActivity {
 
                 spinner = findViewById(R.id.spinner_text);
 
-                List<String> Category = new ArrayList<>();
+                receiver = (TextView) findViewById(R.id.services_type_name_text);
+                String passS = getIntent().getStringExtra("pass");
+                assert passS != null;
+                switch (passS) {
+                        case "car":{
+                                receiver.setText(passS);
+                                break;}
+                        case "motor":{
+                                receiver.setText(passS);
+                                break;}
+                        case "house":{
+                                receiver.setText(passS);
+                                break;}
+                        case "garden":{
+                                receiver.setText(passS);
+                                break;}
+                }
+
+                final List<String> Category = new ArrayList<>();
                 Category.add("Car services Cleaning");
                 Category.add("Motorcycle services Cleaning");
                 Category.add("House services Cleaning");
                 Category.add("Garden services Cleaning");
 
-                //receiver.setText(R.string.booking_car_text);
+                //receiver.setText(servicesType);
 
 
                 final ArrayAdapter<String> dataAdpter;
@@ -94,7 +112,7 @@ public  class BookingPage extends AppCompatActivity {
                 Mbooking = findViewById(R.id.Book_button);
 
                 booking = new Booking();
-                ref = database.getInstance().getReference().child("account").child(userID).child("Booking List");
+                ref = database.getInstance().getReference().child("account").child("Booking List");
 
                 ref.addValueEventListener(new ValueEventListener() {
                         @Override
