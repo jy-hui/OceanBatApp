@@ -169,6 +169,8 @@ public  class BookingPage extends AppCompatActivity {
 
 
                                         Toast.makeText(BookingPage.this, "Your services have been add.", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(BookingPage.this,Home.class);
+                                        startActivity(intent);
                                 }
 
                         }
